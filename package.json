@@ -1,5 +1,6 @@
 {
   "name": "cardano-system",
+  "homepage": "https://shamrockpool.github.io/CardanoSystem/",
   "version": "1.10.0",
   "description": "Cardano System",
   "private": true,
@@ -27,6 +28,7 @@
     "@babel/preset-env": "7.14.1",
     "@babel/preset-react": "7.13.13",
     "eslint-plugin-react": "7.23.2",
+    "gh-pages": "^3.2.3",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.9"
   },
@@ -36,6 +38,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
