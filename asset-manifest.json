@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CardanoSystem/static/css/main.cea6e1b1.chunk.css",
-    "main.js": "/CardanoSystem/static/js/main.80529921.chunk.js",
-    "main.js.map": "/CardanoSystem/static/js/main.80529921.chunk.js.map",
+    "main.js": "/CardanoSystem/static/js/main.730be5bd.chunk.js",
+    "main.js.map": "/CardanoSystem/static/js/main.730be5bd.chunk.js.map",
     "runtime-main.js": "/CardanoSystem/static/js/runtime-main.372a2476.js",
     "runtime-main.js.map": "/CardanoSystem/static/js/runtime-main.372a2476.js.map",
     "static/js/2.efa16282.chunk.js": "/CardanoSystem/static/js/2.efa16282.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.372a2476.js",
     "static/js/2.efa16282.chunk.js",
     "static/css/main.cea6e1b1.chunk.css",
-    "static/js/main.80529921.chunk.js"
+    "static/js/main.730be5bd.chunk.js"
   ]
 }
