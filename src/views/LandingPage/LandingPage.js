@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -12,9 +13,7 @@ import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
-
-// import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
@@ -24,6 +23,8 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import ProductSection from "./Sections/ProductSection.js";
 
 import image from "assets/img/planet2.png";
+
+
 
 const dashboardRoutes = [];
 
@@ -63,6 +64,13 @@ export default function LandingPage(props) {
               <img src={image} alt="First slide" className="slick-image" height="400" />
 
             </GridItem>
+            <Link to={{ pathname: '/loading' }}>
+              <Button
+                color="primary"
+                size="lg"
+              >
+                BUY NFT
+              </Button> </Link>
           </GridContainer>
 
         </div>
@@ -71,6 +79,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
+
           {/* <ProductSection /> */}
         </div>
       </div>

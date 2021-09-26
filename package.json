@@ -1,9 +1,9 @@
 {
   "name": "cardano-system",
-  "homepage": "https://shamrockpool.github.io/CardanoSystem/",
+  "homepage": ".",
   "version": "1.10.0",
   "description": "Cardano System",
-  "private": true,
+  "private": false,
   "main": "src/index.js",
   "dependencies": {
     "@babel/core": "7.14.0",
