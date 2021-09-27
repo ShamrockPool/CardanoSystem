@@ -11,19 +11,14 @@ export default class BuyPage extends React.Component {
     price: 0
   };
 
-  async componentDidMount() {
-
-    
+  async componentDidMount() {    
     this.reserveRandom();
-
-
     clearTimeout(this.inputTimer);
     this.inputTimer = setTimeout((e) => {
       this.setState({ loading: false });
     }, 12000);
-
-
   }
+  
   async reserveRandom() {
     const requestOptions = {
       method: 'GET',

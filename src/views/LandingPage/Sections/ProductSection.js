@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-import {Computer , VerifiedUser, Fingerprint} from "@material-ui/icons";
+import { Computer, VerifiedUser, Fingerprint } from "@material-ui/icons";
 
-// import Chat from "@material-ui/icons/Chat";
-// import VerifiedUser from "@material-ui/icons/VerifiedUser";
-// import Fingerprint from "@material-ui/icons/Fingerprint";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
@@ -19,10 +16,27 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 
+import { baseUrl, countAvailable } from '../../../assets/services';
+
 const useStyles = makeStyles(styles);
+
+
 
 export default function ProductSection() {
   const classes = useStyles();
+  const [count, setCount] = useState(0);
+
+  useEffect(async () => {
+    const requestOptions = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    };
+    var response = await fetch(baseUrl + countAvailable, requestOptions);
+    var data = await response.json();
+    setCount(data.count);
+  });
+
+
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -34,48 +48,34 @@ export default function ProductSection() {
         </GridItem>
       </GridContainer>
       <div>
-        {/* <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
-            <InfoArea
-              title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Computer}
-              iconColor="info"
-              vertical
-            />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <InfoArea
-              title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={VerifiedUser}
-              iconColor="success"
-              vertical
-            />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <InfoArea
-              title="Fingerprint"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Fingerprint}
-              iconColor="danger"
-              vertical
-            />
-          </GridItem>
-        </GridContainer> */}
         <GridContainer>
-          <GridItem xs={12} sm={12} md={6} lg={12} style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-          }}>
-            <Link to={{ pathname: '/loading' }}>
+          {count > 0 ?
+            <GridItem xs={12} sm={12} md={6} lg={12} style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}>
+              <Link to={{ pathname: '/loading' }}>
+                <Button
+                  color="primary"
+                  size="xlg">
+                  BUY NFT
+                </Button> </Link>
+            </GridItem> :
+            <GridItem xs={12} sm={12} md={6} lg={12} style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}>
+
               <Button
                 color="primary"
                 size="xlg">
-                BUY NFT
-              </Button> </Link>
-          </GridItem>
+                SOLD OUT
+              </Button>
+            </GridItem>}
+
+
         </GridContainer>
       </div>
     </div>

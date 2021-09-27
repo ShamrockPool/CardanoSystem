@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import { Link } from 'react-router-dom';
 
 // nodejs library that concatenates classes
@@ -32,8 +32,14 @@ const dashboardRoutes = [];
 const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
+
   const classes = useStyles();
   const { ...rest } = props;
+
+  useEffect(() => {
+    
+  });
+
   return (
     <div>
       <Header
