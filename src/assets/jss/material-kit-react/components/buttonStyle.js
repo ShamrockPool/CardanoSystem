@@ -256,11 +256,17 @@ const buttonStyle = {
     opacity: "0.65",
     pointerEvents: "none",
   },
+  xlg: {
+    padding: "2.125rem 3.25rem",
+    fontSize: "1.875rem",
+    lineHeight: "1.333333",
+    borderRadius: "0.2rem",
+  },
   lg: {
     padding: "1.125rem 2.25rem",
     fontSize: "0.875rem",
     lineHeight: "1.333333",
-    borderRadius: "0.2rem",
+    borderRadius: "0.8rem",
   },
   sm: {
     padding: "0.40625rem 1.25rem",

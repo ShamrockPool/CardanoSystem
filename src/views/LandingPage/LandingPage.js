@@ -13,7 +13,7 @@ import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
+// import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
@@ -22,9 +22,10 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
 
-import image from "assets/img/planet2.png";
-
-
+import planet1 from "assets/img/planet1.png";
+import planet2 from "assets/img/planet2.png";
+import planet3 from "assets/img/planet3.jpg";
+import planet4 from "assets/img/planet4.jpg";
 
 const dashboardRoutes = [];
 
@@ -41,46 +42,47 @@ export default function LandingPage(props) {
         brand="Cardano System"
         rightLinks={<HeaderLinks />}
         fixed
-        changeColorOnScroll={{
-          height: 400,
-          color: "white",
-        }}
+        // changeColorOnScroll={{
+        //   height: 200,
+        //   color: "white",
+        // }}
         {...rest}
       />
       <Parallax filter image={require("assets/img/profile-bg.jpg").default}>
         <div className={classes.container}>
 
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6} lg={6}>
-
+            <GridItem xs={12} sm={12} md={12} lg={12} style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}>
               <br />
-              <h1 className={classes.title}>Cardano System</h1>
-              <h1 className={classes.title}>NFT Sale Coming Soon!</h1>
+              <h1 className={classes.title} style={{fontSize: "120px",}}>Cardano System</h1>
               <h4>Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another.</h4>
               <h5>Plato</h5>
             </GridItem>
-
-            <GridItem xs={12} sm={12} md={6} lg={6}>
-              <img src={image} alt="First slide" className="slick-image" height="400" />
-
-            </GridItem>
-            <Link to={{ pathname: '/loading' }}>
-              <Button
-                color="primary"
-                size="lg"
-              >
-                BUY NFT
-              </Button> </Link>
           </GridContainer>
-
+          <br/>
+          <GridContainer style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}>
+          <GridItem xs={12} sm={12} md={12} lg={12}>
+              <img src={planet1} alt="First slide" className="slick-image" height="250" width="250" />
+              <img src={planet2} alt="First slide" className="slick-image" height="250" width="250" />
+              <img src={planet3} alt="First slide" className="slick-image" height="250" width="250" />
+              <img src={planet4} alt="First slide" className="slick-image" height="250" width="250" />
+            </GridItem>
+          </GridContainer>
         </div>
 
 
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-
-          {/* <ProductSection /> */}
+          <ProductSection />
         </div>
       </div>
       <Footer />

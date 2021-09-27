@@ -12,9 +12,13 @@ export default class BuyPage extends React.Component {
   };
 
   async componentDidMount() {
+
+    
+    this.reserveRandom();
+
+
     clearTimeout(this.inputTimer);
     this.inputTimer = setTimeout((e) => {
-      this.reserveRandom();
       this.setState({ loading: false });
     }, 12000);
 
