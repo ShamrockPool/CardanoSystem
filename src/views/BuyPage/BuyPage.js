@@ -4,9 +4,7 @@ import loadingVideo from "assets/loading.mp4";
 import { baseUrl, reserveRandom } from '../../assets/services';
 
 import Parallax from "components/Parallax/Parallax.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-
+import walletqr from "assets/img/walletqr.jpg";
 import Countdown from 'react-countdown';
 
 const container = {
@@ -19,6 +17,7 @@ const container = {
 };
 
 const title = {
+  fontSize: "1.8rem",
   display: "inline-block",
   position: "relative",
   marginTop: "30px",
@@ -27,15 +26,32 @@ const title = {
 };
 
 const subtitle = {
-  // fontSize: "1.313rem",
-  // maxWidth: "700px",
+  fontSize: "1.7rem",
+  margin: "10px auto 0",
+  color: "white"
+};
+
+const mobtitle = {
+  fontSize: "0.8rem",
+  display: "inline-block",
+  position: "relative",
+  marginTop: "30px",
+  minHeight: "32px",
+  color: "white"
+};
+
+const mobsubtitle = {
+  fontSize: "0.7rem",
   margin: "10px auto 0",
   color: "white"
 };
 
 
+const width = window.innerWidth;
+const height = window.innerHeight;
+
 const renderer = ({ hours, minutes, seconds, completed }) => {
-    return <span>{minutes} Minutes {seconds} Seconds</span>;
+  return <span>{minutes} Minutes {seconds} Seconds</span>;
 };
 
 export default class BuyPage extends React.Component {
@@ -50,7 +66,7 @@ export default class BuyPage extends React.Component {
     window.scrollTo(0, 0);
     this.reserveRandom();
 
-   // this.setState({ loading: false });
+    // this.setState({ loading: false });
 
     clearTimeout(this.inputTimer);
     this.inputTimer = setTimeout((e) => {
@@ -66,7 +82,7 @@ export default class BuyPage extends React.Component {
     var response = await fetch(baseUrl + reserveRandom, requestOptions);
     var data = await response.json();
     console.log(data);
-    this.setState({ price: data.price });
+    this.setState({ price: data.price / 1000000 });
   }
 
   render() {
@@ -75,8 +91,8 @@ export default class BuyPage extends React.Component {
       <div style={container}>
         {this.state.loading &&
           <video className='videoTag' autoPlay muted style={{
-            width: '100%',
-            height: '50%',
+            width: width,
+            height: height,
           }}>
             <source src={loadingVideo} type='video/mp4' />
           </video>
@@ -87,16 +103,43 @@ export default class BuyPage extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             textAlign: 'center',
+            zIndex: '0'
           }}>
-
-            <Row>
-              <h1 style={title}>Congratulations a Cardano System NFT has been reserved for you!</h1>
-              <br/>
-              <h2 style={subtitle}>Please send exactly {this.state.price} ADA to the following address:</h2>
-              <h2 style={subtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
-              <br/>
-              <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 600000} renderer={renderer} />,</h2>
-            </Row>
+             
+            <div style={{zIndex: "12"}}>
+            {width < 700 ?
+              <Row >
+                <div style={container}>
+                  <h1 style={mobtitle}><b>Congratulations a Cardano System NFT has been reserved for you!</b></h1>
+                  <br />
+                  <br />
+                  <h2 style={mobsubtitle}>Please send exactly <b>{this.state.price} ADA</b> to the following address:</h2>
+                  <br />                  
+                  <h2 style={mobsubtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
+                  <br />
+                  <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
+                  <br />
+                  <br />
+                  <h2 style={mobsubtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
+                </div>
+              </Row>
+              :
+              <Row >
+              <div style={container}>
+                <h1 style={title}><b>Congratulations a Cardano System NFT has been reserved for you!</b></h1>
+                <br />
+                <br />
+                <h2 style={subtitle}>Please send exactly <b>{this.state.price} ADA</b> to the following address:</h2>
+                <br />                  
+                <h2 style={subtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
+                <br />
+                <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
+                <br />
+                <br />
+                <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
+              </div>
+            </Row>}
+            </div>
           </Parallax>
         }
 

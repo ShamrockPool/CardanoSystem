@@ -16,7 +16,7 @@ class MainLayout extends React.Component {
     const { children } = this.props;
     return (
       <main className="bg-light">
-        <Particle params={particlesConfig} className="App-particles__container" />
+        {/* <Particle params={particlesConfig} className="App-particles__container" style={{zIndex: "1"}}/> */}
         <Content>
           <MyHeader />
           {children}

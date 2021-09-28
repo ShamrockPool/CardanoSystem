@@ -36,7 +36,7 @@ export default function LandingPage(props) {
 
   return (
     <div>
-      <Parallax image={require("assets/img/profile-bg.jpg").default}>
+      <Parallax image={require("assets/img/profile-bg.jpg").default} style={{zIndex: "0"}}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={12} lg={12} style={{
