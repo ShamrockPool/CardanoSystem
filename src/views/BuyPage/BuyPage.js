@@ -27,8 +27,8 @@ const title = {
 };
 
 const subtitle = {
-  fontSize: "1.313rem",
-  maxWidth: "700px",
+  // fontSize: "1.313rem",
+  // maxWidth: "700px",
   margin: "10px auto 0",
   color: "white"
 };
@@ -91,9 +91,11 @@ export default class BuyPage extends React.Component {
 
             <Row>
               <h1 style={title}>Congratulations a Cardano System NFT has been reserved for you!</h1>
-              <h1 style={subtitle}>Please send exactly {this.state.price} ADA to the following address:</h1>
-              <h1 style={subtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h1>
-              <h1 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 600000} renderer={renderer} />,</h1>
+              <br/>
+              <h2 style={subtitle}>Please send exactly {this.state.price} ADA to the following address:</h2>
+              <h2 style={subtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
+              <br/>
+              <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 600000} renderer={renderer} />,</h2>
             </Row>
           </Parallax>
         }
