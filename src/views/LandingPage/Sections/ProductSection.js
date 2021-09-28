@@ -20,6 +20,7 @@ import { baseUrl, countAvailable } from '../../../assets/services';
 
 const useStyles = makeStyles(styles);
 
+const width = window.innerWidth;
 
 
 export default function ProductSection() {
@@ -74,6 +75,20 @@ export default function ProductSection() {
                 SOLD OUT
               </Button>
             </GridItem>}
+
+          {width > 700 &&
+            <GridItem xs={12} sm={12} md={6} lg={12} style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}>
+              <br />
+              <h4 className={classes.description}>Policy ID</h4>
+              <h4 className={classes.description}>f7f95bfc6c6f447844b70d2f0558420c451a1dc14421695e63695c8a</h4>
+            </GridItem>}
+
+
+
 
 
         </GridContainer>

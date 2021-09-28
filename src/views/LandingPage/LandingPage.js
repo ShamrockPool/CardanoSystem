@@ -1,4 +1,4 @@
-import React, { useEffect }  from "react";
+import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 // nodejs library that concatenates classes
@@ -27,6 +27,10 @@ import planet2 from "assets/img/planet2.png";
 import planet3 from "assets/img/planet3.jpg";
 import planet4 from "assets/img/planet4.jpg";
 
+// paricles
+import Particle from "react-particles-js";
+import particlesConfig from "assets/particlesConfig.json";
+
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
@@ -37,50 +41,37 @@ export default function LandingPage(props) {
   const { ...rest } = props;
 
   useEffect(() => {
-    
+
   });
 
   return (
     <div>
-      <Header
-        color="transparent"
-        routes={dashboardRoutes}
-        brand="Cardano System"
-        rightLinks={<HeaderLinks />}
-        fixed
-        // changeColorOnScroll={{
-        //   height: 200,
-        //   color: "white",
-        // }}
-        {...rest}
-      />
       <Parallax filter image={require("assets/img/profile-bg.jpg").default}>
         <div className={classes.container}>
-
           <GridContainer>
             <GridItem xs={12} sm={12} md={12} lg={12} style={{
               justifyContent: 'center',
               alignItems: 'center',
               textAlign: 'center',
             }}>
-              <br />
-              <h1 className={classes.title} style={{fontSize: "120px",}}>Cardano System</h1>
-              <h4>Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another.</h4>
-              <h5>Plato</h5>
+              <h1 className={classes.title}>Cardano System</h1>
+              <h4 className={classes.description}>Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another.</h4>
+              <h5 className={classes.description}>Plato</h5>
             </GridItem>
           </GridContainer>
-          <br/>
+          <br />
           <GridContainer style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'center',
-            }}>
-          <GridItem xs={12} sm={12} md={12} lg={12}>
-              <img src={planet1} alt="First slide" className="slick-image" height="250" width="250" />
-              <img src={planet2} alt="First slide" className="slick-image" height="250" width="250" />
-              <img src={planet3} alt="First slide" className="slick-image" height="250" width="250" />
-              <img src={planet4} alt="First slide" className="slick-image" height="250" width="250" />
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+          }}>
+            <GridItem xs={12} sm={12} md={12} lg={12}>
+              <img src={planet1} alt="First slide" className="slick-image" height="180vw" width="180vw" />
+              <img src={planet2} alt="First slide" className="slick-image" height="180vw" width="180vw" />
+              <img src={planet3} alt="First slide" className="slick-image" height="180vw" width="180vw" />
+              <img src={planet4} alt="First slide" className="slick-image" height="180vw" width="180vw" />
             </GridItem>
+
           </GridContainer>
         </div>
 
@@ -91,7 +82,6 @@ export default function LandingPage(props) {
           <ProductSection />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
