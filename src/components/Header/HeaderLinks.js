@@ -26,6 +26,29 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
+      {/* <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          buttonText="Pages"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent",
+          }}
+          buttonIcon={Apps}
+          dropdownList={[
+            <Link to="/" className={classes.dropdownLink}>
+              All components
+            </Link>,
+            <a
+              href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
+              target="_blank"
+              className={classes.dropdownLink}
+            >
+              Documentation
+            </a>,
+          ]}
+        />
+      </ListItem> */}
       <ListItem className={classes.listItem}>
         {/*<Tooltip title="Delete">
           <IconButton aria-label="Delete">
@@ -46,6 +69,7 @@ export default function HeaderLinks(props) {
           >
             <i className={classes.socialIcons + " fab fa-twitter"} />
           </Button>
+
         </Tooltip>
       </ListItem>
     </List>
