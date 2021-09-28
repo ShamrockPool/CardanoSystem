@@ -50,12 +50,12 @@ export default class BuyPage extends React.Component {
     window.scrollTo(0, 0);
     this.reserveRandom();
 
-    this.setState({ loading: false });
+   // this.setState({ loading: false });
 
-    // clearTimeout(this.inputTimer);
-    // this.inputTimer = setTimeout((e) => {
-    //   this.setState({ loading: false });
-    // }, 14000);
+    clearTimeout(this.inputTimer);
+    this.inputTimer = setTimeout((e) => {
+      this.setState({ loading: false });
+    }, 14000);
   }
 
   async reserveRandom() {
