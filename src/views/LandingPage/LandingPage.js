@@ -45,8 +45,9 @@ export default function LandingPage(props) {
               textAlign: 'center'
             }}>
               <h1 className={classes.title}>Cardano System</h1>
-              <h4 className={classes.description}>Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another.</h4>
-              <h5 className={classes.description}>Plato</h5>
+              <h4 className={classes.description}> Welcome to Cardano System, a Cardano NFT project, launching very soon </h4>
+              <h5 className={classes.description}>Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another.</h5>
+              {/* <h5 className={classes.description}>Plato</h5> */}
             </GridItem>
           </GridContainer>
           <br />

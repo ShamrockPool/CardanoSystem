@@ -56,6 +56,22 @@ export default function HeaderLinks(props) {
           </IconButton>
         </Tooltip>*/}
         <Tooltip
+          id="discord"
+          title="Join Our Discord"
+          placement={window.innerWidth > 959 ? "top" : "left"}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Button
+            href="https://discord.gg/3PEXnuCKPT"
+            target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <i className={classes.socialIcons + " fab fa-discord"} />
+          </Button>
+
+        </Tooltip>
+        <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
           placement={window.innerWidth > 959 ? "top" : "left"}

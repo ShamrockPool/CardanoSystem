@@ -9,11 +9,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Header from "components/Header/Header.js";
 // import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
-
+import LeftHeaderLinks from "../components/Header/LeftHeaderLinks.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
-const dashboardRoutes = [];
+const dashboardRoutes = ['Hi'];
 
 const useStyles = makeStyles(styles);
 
@@ -32,6 +32,7 @@ export default function MyHeader(props) {
         color="transparent"
         routes={dashboardRoutes}
         brand="Cardano System"
+        leftLinks={<LeftHeaderLinks />}
         rightLinks={<HeaderLinks />}
         fixed
         // changeColorOnScroll={{
