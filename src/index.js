@@ -10,6 +10,8 @@ import "assets/scss/material-kit-react.scss?v=1.10.0";
 // pages for this product
 import LandingPage from "views/LandingPage/LandingPage.js";
 import BuyPage from "views/BuyPage/BuyPage.js";
+import NftLookUpPage from "views/NftLoopUpPage/NftLookUpPage.js";
+
 
 // paricles
 import Particle from "react-particles-js";
@@ -27,6 +29,7 @@ ReactDOM.render(
       <MainLayout>
         <Route exact path="/" render={(props) => <LandingPage {...props} />} />
         <Route exact path="/loading" render={(props) => <BuyPage {...props} />} />
+        <Route exact path="/search" render={(props) => <NftLookUpPage {...props} />} />
       </MainLayout>
     </Switch>
   </HashRouter>,

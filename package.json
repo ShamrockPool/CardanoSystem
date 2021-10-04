@@ -20,10 +20,12 @@
     "react-countdown": "^2.3.2",
     "react-datetime": "3.0.4",
     "react-dom": "^17.0.2",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-particles-js": "^3.5.3",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
     "react-slick": "0.28.1",
+    "react-vertical-timeline-component": "^3.3.3",
     "reactstrap": "^8.10.0",
     "tsparticles": "^1.33.3"
   },
@@ -42,7 +44,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && gulp licenses",
+    "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",

@@ -15,6 +15,8 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
+import WorkSection from "./Sections/WorkSection.js";
+import TeamSection from "./Sections/TeamSection.js";
 
 import planet1 from "assets/img/planet1.png";
 import planet2 from "assets/img/planet2.png";
@@ -33,6 +35,19 @@ export default function LandingPage(props) {
   useEffect(() => {
 
   });
+
+  // switchImage() {
+  //   if (this.state.currentImage < this.state.images.length - 1) {
+  //     this.setState({
+  //       currentImage: this.state.currentImage + 1
+  //     });
+  //   } else {
+  //     this.setState({
+  //       currentImage: 0
+  //     });
+  //   }
+  //   return this.currentImage;
+  // }
 
   return (
     <div>
@@ -79,6 +94,8 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
+          <WorkSection />
+          <TeamSection />
         </div>
       </div>
     </div>

@@ -258,9 +258,9 @@ const buttonStyle = {
   },
   xlg: {
     padding: "2.125rem 3.25rem",
-    fontSize: "1.875rem",
+    fontSize: "1.2rem",
     lineHeight: "1.333333",
-    borderRadius: "0.2rem",
+    borderRadius: "1.2rem",
   },
   lg: {
     padding: "1.125rem 2.25rem",
