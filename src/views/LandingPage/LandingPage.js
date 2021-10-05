@@ -23,6 +23,9 @@ import planet2 from "assets/img/planet2.png";
 import planet3 from "assets/img/planet3.jpg";
 import planet4 from "assets/img/planet4.jpg";
 
+import planets from "assets/img/planets.gif";
+
+
 const width = window.innerWidth;
 const dashboardRoutes = [];
 const useStyles = makeStyles(styles);
@@ -51,7 +54,7 @@ export default function LandingPage(props) {
 
   return (
     <div>
-      <Parallax image={require("assets/img/profile-bg.jpg").default} style={{zIndex: "0"}}>
+      <Parallax filter image={require("assets/img/profile-bg.jpg").default} style={{zIndex: "0"}}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={12} lg={12} style={{

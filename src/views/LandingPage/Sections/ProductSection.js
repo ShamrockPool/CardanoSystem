@@ -16,6 +16,8 @@ import Button from "components/CustomButtons/Button.js";
 import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 import { baseUrl, countAvailable } from '../../../assets/services';
 
+import planets from "assets/img/planets.gif";
+
 const useStyles = makeStyles(styles);
 const width = window.innerWidth;
 
@@ -40,15 +42,19 @@ export default function ProductSection() {
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>THE SYSTEM</h2>
-
           <h5 className={classes.description}>
             Cardano system is a collection of NFt series based around the mysteries of the solar system. 
           </h5>
 
+
+
           <h3 className={classes.title}>Series 1 - Planets</h3>
+
           <h5 className={classes.description}>
-            This series will consist of 5,000 totally unique algorithmically generated images. We have spent alot of hours perfecting the code to make sure the art that is generated is totally unique.
+            This series will consist of 5,000 totally unique algorithmically generated planets.
+            {/* <br></br>We have spent alot of hours perfecting the code to make sure the art that is generated is totally unique. */}
           </h5>
+          <img src={planets} className="slick-image" height="250vw" width="250vw" />
         </GridItem>
       </GridContainer>
       <GridContainer justify="center">
