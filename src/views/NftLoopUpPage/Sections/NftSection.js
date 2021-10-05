@@ -21,12 +21,14 @@ export default function NftSection(props) {
     );
     return (
         <GridItem xs={12} sm={12} md={2} className={classes.itemGrid}>
-            <img src='https://gateway.pinata.cloud/ipfs/Qmdvtm3UsDs55AyZp9sJHYCCyj1i4Jv5gvmQz3p7T1YfTp' alt="..." className={imageClasses} />
+            <img src={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'} alt="..." className={imageClasses} />
             <h4 className={classes.cardTitle} style={{ fontWeight: 'bold', color: 'white' }}>
                 {props.nftData.name}
                 {/* <br />
                     <small className={classes.smallTitle}>{props.nftData.description}</small> */}
             </h4>
+            <br></br>
+            <br></br>
         </GridItem>
     );
 }

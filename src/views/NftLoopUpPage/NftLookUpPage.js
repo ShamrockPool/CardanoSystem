@@ -11,6 +11,8 @@ import { baseUrl, getAllNfts } from '../../assets/services';
 
 import NftSection from 'views/NftLoopUpPage/Sections/NftSection.js'
 
+import Scroll from 'components/Scroll/Scroll.js';
+
 
 class NftLookUpPage extends React.Component {
 
@@ -42,8 +44,6 @@ class NftLookUpPage extends React.Component {
   };
 
   fetchDataForTable = () => {
-    // a fake async api call like which sends
-    // 20 more records in 1.5 secs
     this.setState({ count: this.state.count + this.state.count });
     var response = this.state.data.slice(0, this.state.count);
     this.setState({ dataToShow: response });
@@ -52,13 +52,21 @@ class NftLookUpPage extends React.Component {
   render() {
 
     return (
-      <Parallax image={require("assets/img/sign.jpg").default} style={{ zIndex: "0" }}>
-        <div id="scrollableDiv" style={{ height: 800, overflow: "auto" }}>
 
-          {/* <h1 color='white'>Cardano System Nft Search</h1> */}
-          {/* <hr /> */}
+      <Parallax filter image={require("assets/img/sign.jpg").default} style={{ zIndex: "0" }}>
 
-
+        <div id="scrollableDiv" style={{
+          height: "90vh", overflow: "auto", zIndex: "12",
+          color: "#FFFFFF", justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center'
+        }}>
+          <Scroll showBelow={5} />
+          <br></br>
+          <br></br>
+          <br></br>
+          <h1 color='white'>Cardano System Nft Search</h1>
+          <hr />
           {this.state.loaded == true &&
             <InfiniteScroll
               dataLength={this.state.dataToShow.length} //This is important field to render the next data //https://codesandbox.io/s/0s3wk
