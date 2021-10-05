@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from 'reactstrap';
+import { Col, Row  } from 'reactstrap';
 import classNames from "classnames";
 
 import GridContainer from "components/Grid/GridContainer.js";
@@ -34,7 +34,7 @@ class NftLookUpPage extends React.Component {
     loaded: false,
     data: [],
     dataToShow: [],
-    count: 50,
+    count: 24,
     start: 1,
     search: ''
   };
@@ -78,7 +78,7 @@ class NftLookUpPage extends React.Component {
 
   cancelSearch = () => {
     this.setState({ search: null });
-    this.setState({ dataToShow: this.state.data.slice(0, 40) });
+    this.setState({ dataToShow: this.state.data.slice(0, 24) });
   };
 
 

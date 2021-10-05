@@ -1,4 +1,5 @@
 import React from "react";
+
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -22,7 +23,9 @@ export default function NftSection(props) {
     return (
         // <GridItem xs={12} sm={12} md={2} className={classes.itemGrid}>
         <div>
-            <img src={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'} alt="..." className={imageClasses} />
+            <img src={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'} alt="..." 
+            className={imageClasses} style={{ maxWidth: '16rem', padding:'10px' }}/>
+            
             <h4 className={classes.cardTitle} style={{ fontWeight: 'bold', color: 'white' }}>
                 {props.nftData.name}
                 {/* <br />
