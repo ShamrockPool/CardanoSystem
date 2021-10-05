@@ -11,6 +11,7 @@
     "@material-ui/icons": "4.11.2",
     "bootstrap": "^5.1.1",
     "classnames": "2.3.1",
+    "material-ui-search-bar": "^1.0.0",
     "moment": "2.29.1",
     "node-sass": "6.0.0",
     "nouislider": "15.1.0",

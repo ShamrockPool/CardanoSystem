@@ -20,7 +20,8 @@ export default function NftSection(props) {
         classes.imgFluid
     );
     return (
-        <GridItem xs={12} sm={12} md={2} className={classes.itemGrid}>
+        // <GridItem xs={12} sm={12} md={2} className={classes.itemGrid}>
+        <div>
             <img src={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'} alt="..." className={imageClasses} />
             <h4 className={classes.cardTitle} style={{ fontWeight: 'bold', color: 'white' }}>
                 {props.nftData.name}
@@ -29,6 +30,7 @@ export default function NftSection(props) {
             </h4>
             <br></br>
             <br></br>
-        </GridItem>
+        </div>
+       
     );
 }

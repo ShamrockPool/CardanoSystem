@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Row } from 'reactstrap';
 import classNames from "classnames";
 
 import GridContainer from "components/Grid/GridContainer.js";
@@ -13,6 +14,19 @@ import NftSection from 'views/NftLoopUpPage/Sections/NftSection.js'
 
 import Scroll from 'components/Scroll/Scroll.js';
 
+import SearchBar from "material-ui-search-bar";
+
+import { isEmpty } from 'utils/stringutil.js';
+
+
+var bgColors = {
+  "Default": "#81b71a",
+  "Blue": "#00B1E1",
+  "Cyan": "#37BC9B",
+  "Green": "#8CC152",
+  "Red": "#E9573F",
+  "Purple": "#F6BB42",
+};
 
 class NftLookUpPage extends React.Component {
 
@@ -22,6 +36,7 @@ class NftLookUpPage extends React.Component {
     dataToShow: [],
     count: 50,
     start: 1,
+    search: ''
   };
 
   async componentDidMount() {
@@ -49,49 +64,110 @@ class NftLookUpPage extends React.Component {
     this.setState({ dataToShow: response });
   };
 
+  requestSearch(searchedVal) {
+    this.setState({ search: searchedVal });
+    if (isEmpty(searchedVal)) {
+      this.cancelSearch();
+    } else {
+      const filteredRows = this.state.data.filter((row) => {
+        return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+      });
+      this.setState({ dataToShow: filteredRows });
+    }
+  };
+
+  cancelSearch = () => {
+    this.setState({ search: null });
+    this.setState({ dataToShow: this.state.data.slice(0, 40) });
+  };
+
+
   render() {
 
     return (
 
-      <Parallax filter image={require("assets/img/sign.jpg").default} style={{ zIndex: "0" }}>
-
-        <div id="scrollableDiv" style={{
-          height: "90vh", overflow: "auto", zIndex: "12",
-          color: "#FFFFFF", justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center'
+      <Parallax filter image={require("assets/img/sign.jpg").default} style={{
+        zIndex: "0", justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
+      }}>
+        <Col style={{
+          zIndex: "12"
         }}>
-          <Scroll showBelow={5} />
           <br></br>
           <br></br>
           <br></br>
-          <h1 color='white'>Cardano System Nft Search</h1>
-          <hr />
-          {this.state.loaded == true &&
-            <InfiniteScroll
-              dataLength={this.state.dataToShow.length} //This is important field to render the next data //https://codesandbox.io/s/0s3wk
-              next={this.fetchDataForTable}
-              hasMore={true}
-              loader={<h4>Loading...</h4>}
-              endMessage={
-                <p style={{ textAlign: 'center' }}>
-                  <b>Yay! You have seen it all</b>
-                </p>
-              }
-              scrollableTarget="scrollableDiv"
-            >
-              <GridContainer style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <Row style={{
+            zIndex: "12", justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+          }}>
+            <div style={{
+              zIndex: "12", justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}>
+
+              <h1 style={{ color: "#FFFFFF" }}>Cardano System Nft Search</h1>
+
+              <SearchBar style={{
+                margin: "0 auto",
+                maxWidth: 600
+              }}
+                value={this.state.search}
+                onChange={(searchVal) => this.requestSearch(searchVal)}
+                onCancelSearch={() => this.cancelSearch()}
+              />
+
+            </div>
+          </Row>
+          <br></br>
+          <Row>
+            {this.state.loaded == true &&
+              <div id="scrollableDiv" style={{
+                height: "90vh", overflow: "auto", zIndex: "12",
+                color: "#FFFFFF", padding: '40px'
               }}>
-                {this.state.dataToShow.map((item, index) => (
-                  <NftSection nftData={item} />
-                ))}
-              </GridContainer>
-            </InfiniteScroll>}
-        </div>
-      </Parallax>
+                <InfiniteScroll
+                  dataLength={this.state.dataToShow.length} //This is important field to render the next data //https://codesandbox.io/s/0s3wk
+                  next={this.fetchDataForTable}
+                  hasMore={true}
+                  // loader={<h4>Loading...</h4>}
+                  endMessage={
+                    <p style={{ textAlign: 'center' }}>
+                      <b>Yay! You have seen it all</b>
+                    </p>
+                  }
+                  scrollableTarget="scrollableDiv"
+                >
+
+                  <GridContainer style={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                  }}>
+
+                    {this.state.dataToShow.map((item, index) => (
+                      <NftSection nftData={item} />
+                    ))}
+                  </GridContainer>
+
+                </InfiniteScroll>
+              </div>}
+
+          </Row>
+
+        </Col>
+
+
+
+      </Parallax >
     );
   }
 }

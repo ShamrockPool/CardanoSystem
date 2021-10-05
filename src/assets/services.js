@@ -1,5 +1,5 @@
-//export const baseUrl = "https://cardanosystemservice.com/services"
-export const baseUrl = "http://localhost:8084";
+export const baseUrl = "https://cardanosystemservice.com/services"
+//export const baseUrl = "http://localhost:8084";
 
 //buy nft
 export const reserveRandom = "/nft/reserve";
