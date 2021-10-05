@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.c60c0196.chunk.css",
-    "main.js": "./static/js/main.3a151920.chunk.js",
-    "main.js.map": "./static/js/main.3a151920.chunk.js.map",
+    "main.js": "./static/js/main.6fb9a695.chunk.js",
+    "main.js.map": "./static/js/main.6fb9a695.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.a4b25919.js",
     "runtime-main.js.map": "./static/js/runtime-main.a4b25919.js.map",
     "static/css/2.2aa38b9c.chunk.css": "./static/css/2.2aa38b9c.chunk.css",
@@ -19,6 +19,7 @@
     "static/media/planet2.9bfd72b2.png": "./static/media/planet2.9bfd72b2.png",
     "static/media/planet3.7bc2bec8.jpg": "./static/media/planet3.7bc2bec8.jpg",
     "static/media/planet4.c736c039.jpg": "./static/media/planet4.c736c039.jpg",
+    "static/media/planets.ba2e1b22.gif": "./static/media/planets.ba2e1b22.gif",
     "static/media/profile-bg.jpg": "./static/media/profile-bg.8129069f.jpg",
     "static/media/sign.jpg": "./static/media/sign.6177df0e.jpg"
   },
@@ -27,6 +28,6 @@
     "static/css/2.2aa38b9c.chunk.css",
     "static/js/2.569d4b72.chunk.js",
     "static/css/main.c60c0196.chunk.css",
-    "static/js/main.3a151920.chunk.js"
+    "static/js/main.6fb9a695.chunk.js"
   ]
 }
