@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.c60c0196.chunk.css",
-    "main.js": "/static/js/main.4883599c.chunk.js",
-    "main.js.map": "/static/js/main.4883599c.chunk.js.map",
+    "main.js": "/static/js/main.56db0363.chunk.js",
+    "main.js.map": "/static/js/main.56db0363.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2e120d39.js",
     "runtime-main.js.map": "/static/js/runtime-main.2e120d39.js.map",
     "static/css/2.2aa38b9c.chunk.css": "/static/css/2.2aa38b9c.chunk.css",
@@ -13,6 +13,7 @@
     "static/css/main.c60c0196.chunk.css.map": "/static/css/main.c60c0196.chunk.css.map",
     "static/js/2.cc8f8150.chunk.js.LICENSE.txt": "/static/js/2.cc8f8150.chunk.js.LICENSE.txt",
     "static/media/buy-bg.jpg": "/static/media/buy-bg.21dac9db.jpg",
+    "static/media/cardanobudz.055e1fed.jpg": "/static/media/cardanobudz.055e1fed.jpg",
     "static/media/loading.0d5a2000.mp4": "/static/media/loading.0d5a2000.mp4",
     "static/media/moon.cfb5db12.svg": "/static/media/moon.cfb5db12.svg",
     "static/media/paddy.c8ec9f08.jpg": "/static/media/paddy.c8ec9f08.jpg",
@@ -29,6 +30,6 @@
     "static/css/2.2aa38b9c.chunk.css",
     "static/js/2.cc8f8150.chunk.js",
     "static/css/main.c60c0196.chunk.css",
-    "static/js/main.4883599c.chunk.js"
+    "static/js/main.56db0363.chunk.js"
   ]
 }
