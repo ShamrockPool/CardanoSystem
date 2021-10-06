@@ -64,7 +64,7 @@ export default function NftLookUpPage(props) {
             color: "#FFFFFF"
           }}>
 
-            <h1 color='white'>Cardano System Nft Search</h1>
+            <h1 color='white'>Nft Search</h1>
             <hr />
 
             {loaded == true &&
