@@ -9,13 +9,33 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="76x76" href="%PUBLIC_URL%/icon.png" />
+  <link rel="manifest" href="https://shamrockpool.github.io/CardanoSystem/manifest.json" />
+  <link rel="shortcut icon" href="https://shamrockpool.github.io/CardanoSystem/favicon2.ico" />
+  <link rel="apple-touch-icon" sizes="76x76" href="https://shamrockpool.github.io/CardanoSystem/icon.png" />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet" />
+
+
+  <!-- Google / Search Engine Tags-->
+  <meta itemprop="name" content="Cardano System CNFT">
+  <meta itemprop="description" content="CardanoSystem.com a Cardano NFT.">
+  <meta itemprop="image" content="https://cardanosystem.com/icon.png">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://cardanosystem.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cardano System CNFT">
+  <meta property="og:description" content="CardanoSystem.com a Cardano NFT.">
+  <meta property="og:image" content="https://cardanosystem.com/icon.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cardano System CNFT">
+  <meta name="twitter:description" content="CardanoSystem.com a Cardano NFT.">
+  <meta name="twitter:image" content="https://cardanosystem.com/icon.png">
+
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,26 +47,25 @@
     -->
   <title>Cardano System</title>
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="Cardano System CNFT">
-  <meta itemprop="description"
-    content="CardanoSystem.com a Cardano NFT.">
-  <meta itemprop="image" content="https://cardanosystem.com/icon.png">
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://cardanosystem.com">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Cardano System CNFT">
-  <meta property="og:description"
-    content="CardanoSystem.com a Cardano NFT.">
-  <meta property="og:image" content="https://cardanosystem.com/icon.png">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cardano System CNFT">
-  <meta name="twitter:description"
-    content="CardanoSystem.com a Cardano NFT.">
-  <meta name="twitter:image" content="https://cardanosystem.com/icon.png">
+  <!-- Start Single Page Apps for GitHub Pages -->
+  <script type="text/javascript">
+    (function (l) {
+      if (l.search) {
+        var q = {};
+        l.search.slice(1).split('&').forEach(function (v) {
+          var a = v.split('=');
+          q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+        });
+        if (q.p !== undefined) {
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + (q.p || '') +
+            (q.q ? ('?' + q.q) : '') +
+            l.hash
+          );
+        }
+      }
+    }(window.location))
+  </script>
 </head>
 
 <body>
