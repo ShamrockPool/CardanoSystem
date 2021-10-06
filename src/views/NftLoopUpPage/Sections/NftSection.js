@@ -20,6 +20,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 
 import ShareProject from 'components/Share/ShareProject';
+import ModalImage from "react-modal-image";
 
 const useStyles = makeStyles(styles);
 
@@ -58,11 +59,17 @@ export default function NftSection(props) {
                 onClose={() => setClassicModal(false)}
                 aria-labelledby="classic-modal-slide-title"
                 aria-describedby="classic-modal-slide-description"
+
             >
                 <DialogTitle
                     id="classic-modal-slide-title"
                     disableTypography
                     className={classes.modalHeader}
+                    style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }}
                 >
                     <IconButton
                         className={classes.modalCloseButton}
@@ -80,9 +87,22 @@ export default function NftSection(props) {
                 <DialogContent
                     id="classic-modal-slide-description"
                     className={classes.modalBody}
+                    style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }}
                 >
+                    {props.nftData.ipfs != null &&
+                        // <img src={props.nftData.ipfs} alt="First slide" className="slick-image" style={{ maxWidth: '35rem', maxHeight: '40rem', padding: '20px' }}/>}
+
+                        <ModalImage
+                            small={props.nftData.ipfs}
+                            large={props.nftData.ipfs}
+                            style={{ height: 'auto' }}
+                        />}
                     <p>
-                        Rarity information to be made available post sell out.
+                        Rarity information to be made available when series is sold out.
                     </p>
 
                 </DialogContent>
@@ -97,7 +117,7 @@ export default function NftSection(props) {
 
                 </DialogContent>
 
-                
+
                 <DialogActions className={classes.modalFooter}>
                     <Button
                         onClick={() => setClassicModal(false)}

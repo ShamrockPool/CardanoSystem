@@ -202,7 +202,7 @@ export default class BuyPage extends React.Component {
                     <br />
                     <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} /></h2>
                     <br />
-                    <h2 style={subtitle}>Once payment is received this screen will transition to your NFT!</h2>
+                    <h2 style={subtitle}>Once payment is processed this screen will transition to your NFT!</h2>
                   </div>
                 </Row>}
             </div>
