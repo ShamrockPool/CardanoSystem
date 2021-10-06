@@ -42,7 +42,7 @@ class NftLookUpPage extends React.Component {
     loaded: false,
     data: [],
     dataToShow: [],
-    count: 18,
+    count: 48,
     start: 1,
     search: ''
   };
@@ -70,7 +70,11 @@ class NftLookUpPage extends React.Component {
   fetchDataForTable = () => {
     this.setState({ count: this.state.count + this.state.count });
     var response = this.state.data.slice(0, this.state.count);
-    this.setState({ dataToShow: response });
+
+    setTimeout(() => {
+      this.setState({ dataToShow: response });
+    }, 1000);
+
   };
 
   requestSearch(searchedVal) {
@@ -87,7 +91,7 @@ class NftLookUpPage extends React.Component {
 
   cancelSearch = () => {
     this.setState({ search: null });
-    this.setState({ dataToShow: this.state.data.slice(0, 18) });
+    this.setState({ dataToShow: this.state.data.slice(0, 48) });
   };
 
 
@@ -111,7 +115,7 @@ class NftLookUpPage extends React.Component {
           <br></br>
           <br></br>
           <br></br>
- 
+
           <Row style={{
             zIndex: "12", justifyContent: 'center',
             alignItems: 'center',

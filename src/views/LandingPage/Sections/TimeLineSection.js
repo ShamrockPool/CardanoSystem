@@ -52,7 +52,7 @@ export default function TimeLineSection() {
               iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
               icon={<Moon />}
             >
-              <h3 className="vertical-timeline-element-title">Series 1 - Planets Art Complete </h3>
+              <h3 className="vertical-timeline-element-title">Series 1 - Art Complete </h3>
               <h4 className="vertical-timeline-element-subtitle">October 4th 2021</h4>
               <p>
                 After countless hours working on the planets we have been able to finalise 5000 unique planets.
@@ -67,14 +67,29 @@ export default function TimeLineSection() {
               contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
               icon={<Moon />}
             >
-              <h3 className="vertical-timeline-element-title">Backend and Website</h3>
-              <h4 className="vertical-timeline-element-subtitle">October 8th 2021</h4>
+              <h3 className="vertical-timeline-element-title">Website</h3>
+              <h4 className="vertical-timeline-element-subtitle">October 6th 2021</h4>
               <p>
-                Finalisation of the backend system and deployment of Website.
+                Deployment of Website.
               </p>
             </VerticalTimelineElement>
 
             <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              date="2008 - 2010"
+              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+              icon={<Moon />}
+            >
+              <h3 className="vertical-timeline-element-title">Backend systems</h3>
+              <h4 className="vertical-timeline-element-subtitle">October 8th 2021</h4>
+              <p>
+                Finalisation of the backend system.
+              </p>
+            </VerticalTimelineElement>
+
+            {/* <VerticalTimelineElement
               className="vertical-timeline-element--work"
               date="2008 - 2010"
               contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -87,7 +102,7 @@ export default function TimeLineSection() {
               <p>
                 Small private sale to verify all production systems are a go for Series 1 Go Live.
               </p>
-            </VerticalTimelineElement>
+            </VerticalTimelineElement> */}
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
