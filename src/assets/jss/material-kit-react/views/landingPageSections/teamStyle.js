@@ -1,5 +1,9 @@
-import { cardTitle, title } from "assets/jss/material-kit-react.js";
+import { cardTitle, title, container } from "assets/jss/material-kit-react.js";
 import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
+
+import modalStyle from "assets/jss/material-kit-react/modalStyle.js";
+import tooltipsStyle from "assets/jss/material-kit-react/tooltipsStyle.js";
+import popoverStyles from "assets/jss/material-kit-react/popoverStyles.js";
 
 const teamStyle = {
   section: {

@@ -23,8 +23,7 @@ import planet2 from "assets/img/planet2.png";
 import planet3 from "assets/img/planet3.jpg";
 import planet4 from "assets/img/planet4.jpg";
 
-import planets from "assets/img/planets.gif";
-
+import SectionJavascript from "views/Components/Sections/SectionJavascript.js"
 
 const width = window.innerWidth;
 const dashboardRoutes = [];

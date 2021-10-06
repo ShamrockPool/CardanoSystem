@@ -88,64 +88,65 @@ export default class BuyPage extends React.Component {
   render() {
     return (
 
-        <div filter style={container}>
-          {this.state.loading &&
-            <video className='videoTag' autoPlay muted style={{
-              width: width,
-              height: height,
-            }}>
-              <source src={loadingVideo} type='video/mp4' />
-            </video>
-          }
+      <div style={container}>
+        {this.state.loading &&
+          <video className='videoTag' autoPlay muted style={{
+            width: width,
+            height: height,
+          }}>
+            <source src={loadingVideo} type='video/mp4' />
+          </video>
+        }
 
-          {this.state.loading == false &&
-            <Parallax filter image={require("assets/img/buy-bg.jpg").default} style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'center',
-              zIndex: '0'
-            }}>
+        {this.state.loading == false &&
+          <Parallax filter image={require("assets/img/buy-bg.jpg").default} style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            zIndex: '0',
+            backgroundColor: 'rgba(0,0,0, 100)'
+          }}>
 
-              <div style={{ zIndex: "12" }}>
-                {width < 700 ?
-                  <Row >
-                    <div style={container}>
-                      <h1 style={mobtitle}><b>Congratulations.</b></h1>
-                      <h1 style={mobtitle}><b>A Cardano System NFT has been reserved for you.</b></h1>
-                      <br />
-                      <br />
-                      <h2 style={mobsubtitle}>Please send exactly <b>{this.state.price} ADA</b> to the following address:</h2>
-                      <br />
-                      <h2 style={mobsubtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
-                      <br />
-                      <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
-                      <br />
-                      <br />
-                      <h2 style={mobsubtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
-                    </div>
-                  </Row>
-                  :
-                  <Row >
-                    <div style={container}>
-                      <h1 style={title}><b>Congratulations a Cardano System NFT has been reserved for you!</b></h1>
-                      <br />
-                      <br />
-                      <h2 style={subtitle}>Please send exactly <b>{this.state.price} ADA</b> to the following address:</h2>
-                      <br />
-                      <h2 style={subtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
-                      <br />
-                      <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
-                      <br />
-                      <br />
-                      <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
-                    </div>
-                  </Row>}
-              </div>
-            </Parallax>
-          }
+            <div style={{ zIndex: "12" }}>
+              {width < 700 ?
+                <Row >
+                  <div style={container}>
+                    <h1 style={mobtitle}><b>Congratulations.</b></h1>
+                    <h1 style={mobtitle}><b>A Cardano System NFT has been reserved for you.</b></h1>
+                    <br />
+                    <br />
+                    <h2 style={mobsubtitle}>Please send exactly <b>{this.state.price} ADA</b> to the following address:</h2>
+                    <br />
+                    <h2 style={mobsubtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
+                    <br />
+                    <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
+                    <br />
+                    <br />
+                    <h2 style={mobsubtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
+                  </div>
+                </Row>
+                :
+                <Row >
+                  <div style={container}>
+                    <h1 style={title}><b>Congratulations a Cardano System NFT has been reserved for you!</b></h1>
+                    <br />
+                    <br />
+                    <h2 style={subtitle}>Please send exactly <h1 style={title}><b>{this.state.price} ADA</b></h1> to the following address:</h2>
+                    <br />
+                    <h2 style={subtitle}>addr1vyxc4pmqtdn0vmx8077p64u2534nm5n2s4qappq7xm9saeg5glqa9</h2>
+                    <br />
+                    <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
+                    <br />
+                    <br />
+                    <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
+                  </div>
+                </Row>}
+            </div>
+          </Parallax>
+        }
 
 
-        </div>
+      </div>
 
     );
   }
