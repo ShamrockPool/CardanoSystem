@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row  } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 import classNames from "classnames";
 
 import GridContainer from "components/Grid/GridContainer.js";
@@ -18,6 +18,14 @@ import SearchBar from "material-ui-search-bar";
 
 import { isEmpty } from 'utils/stringutil.js';
 
+import { css } from "@emotion/react";
+import ScaleLoader from "react-spinners/ScaleLoader";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 var bgColors = {
   "Default": "#81b71a",
@@ -50,13 +58,13 @@ class NftLookUpPage extends React.Component {
       var dataObj = await response.json();
       this.setState({ data: dataObj });
       this.setState({ dataToShow: dataObj.slice(0, this.state.count) });
-
+      this.setState({ loaded: true });
     } catch (error) {
       console.log(error);
     }
 
 
-    this.setState({ loaded: true });
+
   };
 
   fetchDataForTable = () => {
@@ -129,6 +137,7 @@ class NftLookUpPage extends React.Component {
             </div>
           </Row>
           <br></br>
+          <div><ScaleLoader color={'#9c27b0'} loading={!this.state.loaded} css={override} size={180} /></div>
           <Row>
             {this.state.loaded == true &&
               <div id="scrollableDiv" style={{
