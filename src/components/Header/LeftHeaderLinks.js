@@ -43,7 +43,7 @@ export default function LeftHeaderLinks(props) {
           classes={{ tooltip: classes.tooltip }}
         >
           <Link to="/search" className={classes.navLink}>
-               <Button style={{fontWeight: 'bold', color:'white'}}>FIND NFT</Button>
+            <Button style={{ fontWeight: 'bold', color: "#9c27b0" }}><i className={classes.socialIcons + " fas fa-search"} />SEARCH NFT</Button>
           </Link>
 
         </Tooltip>

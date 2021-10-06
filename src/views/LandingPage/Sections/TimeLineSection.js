@@ -20,7 +20,7 @@ import { ReactComponent as Moon } from "assets/svg/moon.svg";
 
 
 
-export default function WorkSection() {
+export default function TimeLineSection() {
   const classes = useStyles();
   return (
     <div className={classes.section}>
@@ -33,14 +33,14 @@ export default function WorkSection() {
               className="vertical-timeline-element--work"
               contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
               contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-              date="2011 - present"
+              // date="2011 - present"
               iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Project inception</h3>
-              <h4 className="vertical-timeline-element-subtitle">DATE</h4>
+              <h4 className="vertical-timeline-element-subtitle">August 1st 2021</h4>
               <p>
-                Paddy and Craig flesh out the idea of Cardano System.
+                Paddy and Craig flesh out the idea of Cardano System and beginning working on Series 1 Planets
               </p>
             </VerticalTimelineElement>
 
@@ -52,10 +52,10 @@ export default function WorkSection() {
               iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
               icon={<Moon />}
             >
-              <h3 className="vertical-timeline-element-title">Project inception</h3>
-              <h4 className="vertical-timeline-element-subtitle">DATE</h4>
+              <h3 className="vertical-timeline-element-title">Series 1 - Planets Art Complete </h3>
+              <h4 className="vertical-timeline-element-subtitle">October 4th 2021</h4>
               <p>
-                Paddy and Craig flesh out the idea of Cardano System.
+                After countless hours working on the planets we have been able to finalise 5000 unique planets.
               </p>
             </VerticalTimelineElement>
 
@@ -67,10 +67,40 @@ export default function WorkSection() {
               contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
               icon={<Moon />}
             >
-              <h3 className="vertical-timeline-element-title">Web Designer</h3>
-              <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+              <h3 className="vertical-timeline-element-title">Backend and Website</h3>
+              <h4 className="vertical-timeline-element-subtitle">October 8th 2021</h4>
               <p>
-                User Experience, Visual Design
+                Finalisation of the backend system and deployment of Website.
+              </p>
+            </VerticalTimelineElement>
+
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              date="2008 - 2010"
+              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+              icon={<Moon />}
+            >
+              <h3 className="vertical-timeline-element-title">Private Sale</h3>
+              <h4 className="vertical-timeline-element-subtitle">October 11th 2021</h4>
+              <p>
+                Small private sale to verify all production systems are a go for Series 1 Go Live.
+              </p>
+            </VerticalTimelineElement>
+
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              date="2008 - 2010"
+              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+              icon={<Moon />}
+            >
+              <h3 className="vertical-timeline-element-title">Series 1 Public Sale</h3>
+              <h4 className="vertical-timeline-element-subtitle">October 15th 2021</h4>
+              <p>
+                Cardano System Series 1 planets will be available for public purchasing.
               </p>
             </VerticalTimelineElement>
 

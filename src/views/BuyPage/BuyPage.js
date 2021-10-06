@@ -99,7 +99,7 @@ export default class BuyPage extends React.Component {
           }
 
           {this.state.loading == false &&
-            <Parallax filter image={require("assets/img/profile-bg.jpg").default} style={{
+            <Parallax filter image={require("assets/img/buy-bg.jpg").default} style={{
               justifyContent: 'center',
               alignItems: 'center',
               textAlign: 'center',
@@ -110,7 +110,8 @@ export default class BuyPage extends React.Component {
                 {width < 700 ?
                   <Row >
                     <div style={container}>
-                      <h1 style={mobtitle}><b>Congratulations a Cardano System NFT has been reserved for you!</b></h1>
+                      <h1 style={mobtitle}><b>Congratulations.</b></h1>
+                      <h1 style={mobtitle}><b>A Cardano System NFT has been reserved for you.</b></h1>
                       <br />
                       <br />
                       <h2 style={mobsubtitle}>Please send exactly <b>{this.state.price} ADA</b> to the following address:</h2>

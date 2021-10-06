@@ -38,7 +38,7 @@ const headerLinksStyle = (theme) => ({
     padding: "0 !important",
   },
   navLink: {
-    color: "inherit",
+    color: "#9c27b0",
     position: "relative",
     padding: "0.9375rem",
     fontWeight: "400",
@@ -100,6 +100,7 @@ const headerLinksStyle = (theme) => ({
     position: "relative",
     fontSize: "20px !important",
     marginRight: "4px",
+    color: "#9c27b0"
   },
   dropdownLink: {
     "&,&:hover,&:focus": {
