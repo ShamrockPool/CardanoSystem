@@ -85,7 +85,7 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  One of the original NFT creators on the Cardano blockchain and also a form stake pool operator. 
+                  One of the original NFT creators on the Cardano blockchain and also a former stake pool operator. 
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
