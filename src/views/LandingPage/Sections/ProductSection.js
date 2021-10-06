@@ -43,18 +43,22 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>THE SYSTEM</h2>
           <h5 className={classes.description}>
-            Cardano system is a collection of NFt series based around the mysteries of the solar system. 
+            Cardano system is a collection of NFt series based around the mysteries of the solar system.
           </h5>
 
-
-
-          <h3 className={classes.title}>Series 1 - Planets</h3>
+          <Link to={"/search"} className={classes.link}>
+            <h3 className={classes.title}>Series 1 - Planets</h3>
+          </Link>
 
           <h5 className={classes.description}>
             This series will consist of 5,000 totally unique algorithmically generated planets.
             {/* <br></br>We have spent alot of hours perfecting the code to make sure the art that is generated is totally unique. */}
           </h5>
           <img src={planets} className="slick-image" height="250vw" width="250vw" />
+          <br></br>
+          <Link to={"/search"} className={classes.link}>
+            View planets
+          </Link>
         </GridItem>
       </GridContainer>
       <GridContainer justify="center">
@@ -71,18 +75,18 @@ export default function ProductSection() {
             <b> Base Sphere,</b> <b>Overlay,</b> <b>Sun,</b> <b>Alien,</b> <b>Moons.</b></p>
           <p className={classes.description}>Adornments have a rarity associated with it, which is simply the number of times it appears across all planets in the Cardano System.</p>
           <p className={classes.description}>Rarity score is calculated by adding up the rarity for each adornment for your planet (minus moons)</p>
-          <br/>
+          <br />
           <p className={classes.description}>Moons are treated differntly as your planet can have 0 to 3 moons.</p>
           <p className={classes.description}>We calculate how rare it is across all planets to have 0, 1, 2 or 3 moons.</p>
           <p className={classes.description}>We then add that rarity to your planet.</p>
-          <br/>
+          <br />
           <p className={classes.description}>The lower the score the more rare your planet is.</p>
           <p className={classes.description}>We then sort all of the planets rarity scores to determine a rarity rank.</p>
           <p className={classes.description}>So in the end all planets have a 1 to 5000 rarity rank.</p>
         </GridItem>
       </GridContainer>
       <div>
-        <GridContainer>
+        {/* <GridContainer>
           {count > 0 ?
             <GridItem xs={12} sm={12} md={6} lg={12} style={{
               justifyContent: 'center',
@@ -124,7 +128,7 @@ export default function ProductSection() {
 
 
 
-        </GridContainer>
+        </GridContainer> */}
       </div>
     </div>
   );

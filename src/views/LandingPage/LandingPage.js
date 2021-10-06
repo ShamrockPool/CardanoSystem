@@ -35,7 +35,7 @@ export default function LandingPage(props) {
   const { ...rest } = props;
 
   useEffect(() => {
-
+    window.scrollTo(0, 0);
   });
 
   // switchImage() {
@@ -85,6 +85,9 @@ export default function LandingPage(props) {
             <img src={planet2} alt="First slide" className="slick-image" height="250vw" width="250vw" />
             <img src={planet3} alt="First slide" className="slick-image" height="250vw" width="250vw" />
             <img src={planet4} alt="First slide" className="slick-image" height="250vw" width="250vw" />
+            <h1 className={classes.title}>Series 1 - Planets</h1>
+            <br></br>
+            <h1 className={classes.title}>Public Sale - 15th October!</h1>
           </GridItem>
             }
 

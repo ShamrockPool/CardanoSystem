@@ -40,6 +40,7 @@ class NftLookUpPage extends React.Component {
   };
 
   async componentDidMount() {
+    window.scrollTo(0, 0);
     try {
       const requestOptions = {
         method: 'GET',

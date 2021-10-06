@@ -38,7 +38,7 @@ export default function NftSection(props) {
         // <GridItem xs={12} sm={12} md={2} className={classes.itemGrid}>
         <div>
             <img src={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'} alt="..."
-                className={imageClasses} style={{ maxWidth: '16rem', padding: '10px' }} onClick={() => setClassicModal(true)} />
+                className={imageClasses} style={{ maxWidth: '20rem', padding: '10px' }} onClick={() => setClassicModal(true)} />
 
             <h4 className={classes.cardTitle} style={{ fontWeight: 'bold', color: 'white' }}>
                 {props.nftData.name}
