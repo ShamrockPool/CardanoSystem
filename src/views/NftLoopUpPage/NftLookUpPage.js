@@ -63,6 +63,22 @@ class NftLookUpPage extends React.Component {
       console.log(error);
     }
 
+    try {
+      if(this.props.location.state.planetName){
+        this.requestSearch(this.props.location.state.planetName)
+      }
+    } catch (error) {
+      
+    }
+
+    try {
+      if(this.props.match.params.planetname){
+        this.requestSearch(this.props.match.params.planetname)
+      }
+    } catch (error) {
+      
+    }
+
 
 
   };

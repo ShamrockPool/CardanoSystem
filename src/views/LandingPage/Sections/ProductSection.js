@@ -86,7 +86,7 @@ export default function ProductSection() {
         </GridItem>
       </GridContainer>
       <div>
-        {/* <GridContainer>
+        <GridContainer>
           {count > 0 ?
             <GridItem xs={12} sm={12} md={6} lg={12} style={{
               justifyContent: 'center',
@@ -124,11 +124,7 @@ export default function ProductSection() {
               <h4 className={classes.description}>f7f95bfc6c6f447844b70d2f0558420c451a1dc14421695e63695c8a</h4>
             </GridItem>}
 
-
-
-
-
-        </GridContainer> */}
+        </GridContainer>
       </div>
     </div>
   );

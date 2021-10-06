@@ -30,6 +30,7 @@ ReactDOM.render(
         <Route exact path="/" render={(props) => <LandingPage {...props} />} />
         <Route exact path="/loading" render={(props) => <BuyPage {...props} />} />
         <Route exact path="/search" render={(props) => <NftLookUpPage {...props} />} />
+        <Route exact path="/search/:planetname" render={(props) => <NftLookUpPage {...props} />} />
       </MainLayout>
     </Switch>
   </HashRouter>,

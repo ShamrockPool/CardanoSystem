@@ -19,11 +19,13 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/team
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 
+import ShareProject from 'components/Share/ShareProject';
+
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
-  });
+});
 
 export default function NftSection(props) {
     const classes = useStyles();
@@ -72,6 +74,8 @@ export default function NftSection(props) {
                         <Close className={classes.modalClose} />
                     </IconButton>
                     <h4 className={classes.modalTitle}>Planet - {props.nftData.name}</h4>
+
+
                 </DialogTitle>
                 <DialogContent
                     id="classic-modal-slide-description"
@@ -80,7 +84,20 @@ export default function NftSection(props) {
                     <p>
                         Rarity information to be made available post sell out.
                     </p>
+
                 </DialogContent>
+                <DialogContent
+                    id="classic-modal-slide-description"
+                    className={classes.modalBody}
+                >
+                    <p>
+                        Share you NFT.
+                    </p>
+                    <ShareProject name={props.nftData.name} />
+
+                </DialogContent>
+
+                
                 <DialogActions className={classes.modalFooter}>
                     <Button
                         onClick={() => setClassicModal(false)}

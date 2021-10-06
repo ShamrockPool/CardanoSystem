@@ -1,11 +1,12 @@
 import React from "react";
 import { Col, Row } from 'reactstrap';
 import loadingVideo from "assets/loading.mp4";
-import { baseUrl, reserveRandom } from '../../assets/services';
+import { baseUrl, reserveRandom, getSoldInfo } from '../../assets/services';
 
 import Parallax from "components/Parallax/Parallax.js";
 import walletqr from "assets/img/walletqr.jpg";
 import Countdown from 'react-countdown';
+
 
 const container = {
   position: "relative",
@@ -59,17 +60,21 @@ export default class BuyPage extends React.Component {
   state = {
     loading: true,
     walletAddress: "thisisthewalletaddress",
-    price: 0
+    price: 0,
+    paymentReceived: false,
+    nftReserved: false,
+    planetName: null
   };
 
   async componentDidMount() {
     window.scrollTo(0, 0);
-    this.reserveRandom();
+
 
     // this.setState({ loading: false });
 
     clearTimeout(this.inputTimer);
     this.inputTimer = setTimeout((e) => {
+      this.reserveRandom();
       this.setState({ loading: false });
     }, 14000);
   }
@@ -81,8 +86,65 @@ export default class BuyPage extends React.Component {
     };
     var response = await fetch(baseUrl + reserveRandom, requestOptions);
     var data = await response.json();
-    console.log(data);
-    this.setState({ price: data.price / 1000000 });
+
+    if (data != null && data.price != null) {
+      this.setState({ price: data.price });
+      this.setState({ nftReserved: true });
+      this.paymentCheck();
+    } else {
+
+    }
+
+  }
+
+  async paymentCheck() {
+    if (this.state.nftReserved) {
+      console.log("In payment checker1.")
+
+      for (let i = 0; i < 24; i++) {
+        console.log("In payment checker for.")
+        await this.sleep(60000);
+        await this.queryForSold();
+        if (this.state.paymentReceived == true) {
+          break;
+        }
+      }
+
+      if (this.state.paymentReceived == true) {
+         this.props.history.push({
+          pathname: "/search",
+          state: { planetName: this.state.planetName }
+        })
+      }
+    }
+  }
+
+  async sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async queryForSold() {
+    try {
+      console.log("In payment checker2.")
+
+      const requestOptions = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      };
+      console.log(this.state.price)
+      var response = await fetch(baseUrl + getSoldInfo + this.state.price, requestOptions);
+      if (response != null) {
+        var data = await response.json();
+        console.log(data);
+
+        if (data != null && data.id != null) {
+          this.setState({ paymentReceived: true });
+          this.setState({ planetName: data.name });
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
@@ -138,7 +200,9 @@ export default class BuyPage extends React.Component {
                     <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
                     <br />
                     <br />
-                    <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
+                    <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} /></h2>
+                    <br />
+                    <h2 style={subtitle}>Once payment is received this screen will transition to your NFT!</h2>
                   </div>
                 </Row>}
             </div>
