@@ -52,7 +52,7 @@ export default function BuyNow(props) {
             alignItems: 'center',
             textAlign: 'center',
         }}>
-            {/* {this.state.count > 0 ?
+            {count > 0 ?
                     <GridItem xs={12} sm={12} md={6} lg={12} style={{
                         justifyContent: 'center',
                         alignItems: 'center',
@@ -61,7 +61,7 @@ export default function BuyNow(props) {
                         <Link to={{ pathname: '/buynft', state: { usedBuyButton: true } }}>
                             <Button
                                 color="primary"
-                                size={this.props.buttonSize}>
+                                size={props.buttonSize}>
                                 BUY NOW
                             </Button> </Link>
                     </GridItem> :
@@ -76,10 +76,10 @@ export default function BuyNow(props) {
                             size="xlg">
                             SOLD OUT
                         </Button>
-                    </GridItem>} */}
+                    </GridItem>}
 
 
-            <Button
+            {/* <Button
                 color="primary"
                 size="xlg"
                 onClick={() => setClassicModal(true)}>
@@ -145,7 +145,7 @@ export default function BuyNow(props) {
                         Close
                     </Button>
                 </DialogActions>
-            </Dialog>
+            </Dialog> */}
         </div>
     )
 };
