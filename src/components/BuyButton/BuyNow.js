@@ -42,7 +42,7 @@ export default class BuyNow extends React.Component {
                         alignItems: 'center',
                         textAlign: 'center',
                     }}>
-                        <Link to={{ pathname: '/loading' }}>
+                        <Link to={{ pathname: '/buynft', state: { usedBuyButton: true } }}>
                             <Button
                                 color="primary"
                                 size={this.props.buttonSize}>

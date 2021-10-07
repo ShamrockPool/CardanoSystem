@@ -29,16 +29,16 @@ export default function MyHeader(props) {
   return (
     <div>
       <Header
-        color="transparent"
+        color="white"
         routes={dashboardRoutes}
-        brand="Cardano System"
+        brand="CARDANO SYSTEM"
         leftLinks={<LeftHeaderLinks />}
         rightLinks={<HeaderLinks />}
         fixed
-        // changeColorOnScroll={{
-        //   height: 200,
-        //   color: "white",
-        // }}
+        changeColorOnScroll={{
+          height: 200,
+          color: "white",
+        }}
         {...rest}
       />
     </div>

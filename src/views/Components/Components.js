@@ -38,7 +38,7 @@ export default function Components(props) {
   return (
     <div>
       <Header
-        brand="Cardano System"
+        brand="CARDANO SYSTEM"
         rightLinks={<HeaderLinks />}
         fixed
         color="transparent"

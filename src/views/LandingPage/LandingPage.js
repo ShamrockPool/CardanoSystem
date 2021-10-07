@@ -71,9 +71,10 @@ export default function LandingPage(props) {
               textAlign: 'center'
             }}>
               
-              <h1 className={classes.title}>Cardano System</h1>
-              <h4 className={classes.description}> Welcome to Cardano System, a Cardano NFT project, launching very soon </h4>
-              <h5 className={classes.description}>Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another.</h5>
+              <h1 className={classes.title}>CARDANO SYSTEM</h1>
+              <h4 className={classes.description}>Welcome to Cardano System, a Cardano NFT project</h4>
+              <br></br>
+              <h5 className={classes.description}>"Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another."</h5>
               <small className={classes.quoteAuthor}>Plato</small>
             </GridItem>
           </GridContainer>
@@ -84,16 +85,16 @@ export default function LandingPage(props) {
             textAlign: 'center',
           }}>
 
-            {width < 700 ?
+            {/* {width < 700 ?
               <GridItem xs={12} sm={12} md={12} lg={12}>
                 <img src={planet1} alt="First slide" className="slick-image" height="150vw" width="150vw" />
                 <img src={planet2} alt="First slide" className="slick-image" height="150vw" width="150vw" />
               </GridItem>
-              :
-              <GridItem xs={12} sm={12} md={12} lg={12}>
-                {/* <img src={planets} alt="First slide" className="slick-image"  /> */}
+              : */}
+              {/* <GridItem xs={12} sm={12} md={12} lg={12}>
+                <img src={planets} alt="First slide" className="slick-image"  />
               </GridItem>
-            }
+            } */}
 
           </GridContainer>
           
