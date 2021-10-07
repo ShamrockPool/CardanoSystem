@@ -56,11 +56,11 @@ export default function ProductSection() {
           </Link>
 
           <h3 className={classes.description}>
-            This series will consist of 5,000 totally unique algorithmically generated planets.
+            5,000 unique algorithmically generated and named planets.
             {/* <br></br>We have spent alot of hours perfecting the code to make sure the art that is generated is totally unique. */}
           </h3>
           <Link to={"/search"} className={classes.link}>
-            View Series 1 Planets
+            <b>View Planets</b>
           </Link>
           <br></br>
           <img src={planets} className="slick-image" height="250vw" width="250vw" />
@@ -84,7 +84,7 @@ export default function ProductSection() {
           <p className={classes.description}>We then sort all of the planets rarity scores to determine a rarity rank.</p>
           <p className={classes.description}>So in the end all planets have a 1 to 5000 rarity rank.</p> */}
 
-          <p className={classes.description}>As there are 5000 NFT's in this series we have ranked all planets by rarity 1-5000.</p>
+          <p className={classes.description}>5000 Planet NFT's in the series ranked in rarity 1-5000.</p>
           <p className={classes.description}>Each planet is made up of zero or more of the following elements we call "adornments".</p>
           <p className={classes.description}>Rarity score is calculated by adding up the rarity for each adornment for your planet.</p>
           <p className={classes.description}>A full breakdown of rarity can be found </p>
