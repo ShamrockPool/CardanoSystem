@@ -7,7 +7,13 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
+import 'components/BackgroundVideo/video.css'
 import styles from "assets/jss/material-kit-react/components/parallaxStyle.js";
+
+import BackgroundVideo from "components/BackgroundVideo/BackgroundVideo";
+import spacetravel from 'assets/img/spacetravel.mp4';
+
+
 
 const useStyles = makeStyles(styles);
 
@@ -54,6 +60,7 @@ export default function Parallax(props) {
     >
       {children}
     </div>
+
   );
 }
 

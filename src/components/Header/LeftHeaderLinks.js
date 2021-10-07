@@ -38,12 +38,12 @@ export default function LeftHeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="series"
-          title="Series Info"
+          title="View NFTS"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Link to="/search" className={classes.navLink}>
-            <Button style={{ fontWeight: 'bold', color: "#9c27b0" }}><i className={classes.socialIcons + " fas fa-search"} />SEARCH NFT</Button>
+            <Button style={{ fontWeight: 'bold', color: "#9c27b0", fontFamily:"Goldman"}}><i className={classes.socialIcons + " fas fa-search"} />NFT Search</Button>
           </Link>
 
         </Tooltip>

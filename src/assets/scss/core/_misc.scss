@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  // font-family: "Helvetica";
   font-weight: 300;
   line-height: 1.5em;
 }
@@ -66,7 +66,8 @@ p {
   margin: 0 0 10px;
 }
 html {
-  font-family: sans-serif;
+  // font-family: Helvetica;
+  font-family: 'Goldman', cursive;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -79,6 +80,7 @@ body {
   margin: 0;
   font-size: 1rem;
   text-align: left;
+  font-family: 'Goldman', cursive;
 }
 
 legend {

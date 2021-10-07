@@ -93,7 +93,7 @@ export default function NftSection(props) {
                         textAlign: 'center'
                     }}
                 >
-                    {props.nftData.ipfs != null &&
+                    {props.nftData.ipfs != null &&  props.nftData.ipfs != "null" &&
                         // <img src={props.nftData.ipfs} alt="First slide" className="slick-image" style={{ maxWidth: '35rem', maxHeight: '40rem', padding: '20px' }}/>}
 
                         <ModalImage

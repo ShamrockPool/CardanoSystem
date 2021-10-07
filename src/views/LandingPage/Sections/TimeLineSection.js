@@ -19,22 +19,21 @@ import 'react-vertical-timeline-component/style.min.css';
 import { ReactComponent as Moon } from "assets/svg/moon.svg";
 
 
-
+import planet1 from "assets/img/planet1.png";
 export default function TimeLineSection() {
   const classes = useStyles();
   return (
-    <div className={classes.section}>
-      <GridContainer justify="center">
-        <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>TIMELINE</h2>
+    // <div className={classes.section}>
+    //   <GridContainer justify="center">
+    //     <GridItem cs={12} sm={12} md={8}>
           <VerticalTimeline>
-
+          <h2 className={classes.title}>TIMELINE</h2>
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-              // date="2011 - present"
-              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Project inception</h3>
@@ -46,10 +45,10 @@ export default function TimeLineSection() {
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-              date="2010 - 2011"
-              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Series 1 - Art Complete </h3>
@@ -61,10 +60,10 @@ export default function TimeLineSection() {
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              date="2008 - 2010"
-              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Website</h3>
@@ -76,10 +75,11 @@ export default function TimeLineSection() {
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              date="2008 - 2010"
-              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+              // date="2008 - 2010"
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Backend systems</h3>
@@ -89,27 +89,13 @@ export default function TimeLineSection() {
               </p>
             </VerticalTimelineElement>
 
-            {/* <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2008 - 2010"
-              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-              icon={<Moon />}
-            >
-              <h3 className="vertical-timeline-element-title">Private Sale</h3>
-              <h4 className="vertical-timeline-element-subtitle">October 11th 2021</h4>
-              <p>
-                Small private sale to verify all production systems are a go for Series 1 Go Live.
-              </p>
-            </VerticalTimelineElement> */}
-
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               date="2008 - 2010"
-              contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Series 1 Public Sale</h3>
@@ -119,9 +105,20 @@ export default function TimeLineSection() {
               </p>
             </VerticalTimelineElement>
 
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
+              icon={<Moon />}
+            >
+              <h3 className="vertical-timeline-element-title">Updates coming soon!</h3>
+            </VerticalTimelineElement>
+
           </VerticalTimeline>
-        </GridItem>
-      </GridContainer>
-    </div>
+    //     </GridItem>
+    //   </GridContainer>
+    // </div>
   );
 }

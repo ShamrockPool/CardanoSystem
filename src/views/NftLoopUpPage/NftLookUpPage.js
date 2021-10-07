@@ -115,7 +115,7 @@ class NftLookUpPage extends React.Component {
 
     return (
 
-      <Parallax filter image={require("assets/img/sign.jpg").default} style={{
+      <Parallax filter image={require("assets/img/landing-bg5.jpg").default} style={{
         zIndex: "0", justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center'
@@ -143,7 +143,7 @@ class NftLookUpPage extends React.Component {
               textAlign: 'center',
             }}>
 
-              <h1 style={{ color: "#FFFFFF" }}>Cardano System Nft Search</h1>
+              <h1 style={{ color: "#FFFFFF" }}>Nft Search</h1>
 
               <SearchBar style={{
                 margin: "0 auto",

@@ -23,7 +23,12 @@ import planet2 from "assets/img/planet2.png";
 import planet3 from "assets/img/planet3.jpg";
 import planet4 from "assets/img/planet4.jpg";
 
-import SectionJavascript from "views/Components/Sections/SectionJavascript.js"
+import planets from "assets/img/planets.jpg";
+
+import SectionJavascript from "views/Components/Sections/SectionJavascript.js";
+
+import spacetravel from 'assets/img/spacetravel.mp4';
+
 
 const width = window.innerWidth;
 const dashboardRoutes = [];
@@ -53,18 +58,23 @@ export default function LandingPage(props) {
 
   return (
     <div>
-      <Parallax filter image={require("assets/img/profile-bg.jpg").default} style={{zIndex: "0"}}>
+
+      <Parallax filter image={require("assets/img/landing-bg4.jpg").default} style={{ zIndex: 1 }}>
+
         <div className={classes.container}>
-          <GridContainer>
+          
+          <GridContainer style={{ zIndex: 12 }}>
+            
             <GridItem xs={12} sm={12} md={12} lg={12} style={{
               justifyContent: 'center',
               alignItems: 'center',
               textAlign: 'center'
             }}>
+              
               <h1 className={classes.title}>Cardano System</h1>
               <h4 className={classes.description}> Welcome to Cardano System, a Cardano NFT project, launching very soon </h4>
               <h5 className={classes.description}>Astronomy Compels the Soul to Look Upwards and Leads us from This World to Another.</h5>
-              {/* <h5 className={classes.description}>Plato</h5> */}
+              <small className={classes.quoteAuthor}>Plato</small>
             </GridItem>
           </GridContainer>
           <br />
@@ -75,27 +85,24 @@ export default function LandingPage(props) {
           }}>
 
             {width < 700 ?
-            <GridItem xs={12} sm={12} md={12} lg={12}>
-              <img src={planet1} alt="First slide" className="slick-image" height="150vw" width="150vw" />
-              <img src={planet2} alt="First slide" className="slick-image" height="150vw" width="150vw" />
-            </GridItem>
-            :
-            <GridItem xs={12} sm={12} md={12} lg={12}>
-            <img src={planet1} alt="First slide" className="slick-image" height="250vw" width="250vw" />
-            <img src={planet2} alt="First slide" className="slick-image" height="250vw" width="250vw" />
-            <img src={planet3} alt="First slide" className="slick-image" height="250vw" width="250vw" />
-            <img src={planet4} alt="First slide" className="slick-image" height="250vw" width="250vw" />
-            <h1 className={classes.title}>Series 1 - Planets</h1>
-            <br></br>
-            <h1 className={classes.title}>Public Sale - 15th October!</h1>
-          </GridItem>
+              <GridItem xs={12} sm={12} md={12} lg={12}>
+                <img src={planet1} alt="First slide" className="slick-image" height="150vw" width="150vw" />
+                <img src={planet2} alt="First slide" className="slick-image" height="150vw" width="150vw" />
+              </GridItem>
+              :
+              <GridItem xs={12} sm={12} md={12} lg={12}>
+                {/* <img src={planets} alt="First slide" className="slick-image"  /> */}
+              </GridItem>
             }
 
           </GridContainer>
+          
         </div>
 
 
       </Parallax>
+      
+
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />

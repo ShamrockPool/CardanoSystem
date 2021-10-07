@@ -7,6 +7,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import walletqr from "assets/img/walletqr.jpg";
 import Countdown from 'react-countdown';
 
+import spacetravel from 'assets/img/spacetravel.mp4';
 
 const container = {
   position: "relative",
@@ -38,7 +39,7 @@ const mobtitle = {
   position: "relative",
   marginTop: "30px",
   minHeight: "32px",
-  color: "white"
+  color: "white",
 };
 
 const mobsubtitle = {
@@ -111,7 +112,7 @@ export default class BuyPage extends React.Component {
       }
 
       if (this.state.paymentReceived == true) {
-         this.props.history.push({
+        this.props.history.push({
           pathname: "/search",
           state: { planetName: this.state.planetName }
         })
@@ -152,21 +153,20 @@ export default class BuyPage extends React.Component {
 
       <div style={container}>
         {this.state.loading &&
-          <video className='videoTag' autoPlay muted style={{
-            width: width,
-            height: height,
-          }}>
-            <source src={loadingVideo} type='video/mp4' />
+          <video loop className='videoTag' autoPlay muted>
+            <source src={spacetravel} type='video/mp4' />
           </video>
+
+          // <img src={planet1} alt="First slide" className="slick-image" />
         }
 
         {this.state.loading == false &&
-          <Parallax filter image={require("assets/img/buy-bg.jpg").default} style={{
+          <Parallax filter image={require("assets/img/buy-bg2.jpg").default} style={{
             justifyContent: 'center',
             alignItems: 'center',
             textAlign: 'center',
             zIndex: '0',
-            backgroundColor: 'rgba(0,0,0, 100)'
+
           }}>
 
             <div style={{ zIndex: "12" }}>
@@ -206,8 +206,8 @@ export default class BuyPage extends React.Component {
                   </div>
                 </Row>}
             </div>
-          </Parallax>
-        }
+          </Parallax>}
+
 
 
       </div>
