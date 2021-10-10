@@ -227,7 +227,7 @@ export default class BuyPage extends React.Component {
                           <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
                           <br />
                           <br />
-                          <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} /></h2>
+                          <h2 style={subtitle}>Your NFT is reserved for <Countdown date={Date.now() + 1080000} renderer={renderer} /></h2>
                           <br />
                           <h2 style={subtitle}>Once payment is processed this screen will transition to your NFT!</h2>
                         </div>

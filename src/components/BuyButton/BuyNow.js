@@ -15,6 +15,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import Close from "@material-ui/icons/Close";
+import ArrowForward from "@material-ui/icons/ArrowForward";//className={classes.modalClose}
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 const useStyles = makeStyles(styles);
@@ -98,11 +99,11 @@ export default function BuyNow(props) {
                     id="classic-modal-slide-title"
                     disableTypography
                     className={classes.modalHeader}
-                    style={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        textAlign: 'center'
-                    }}
+                  style={{
+                            justifyContent: 'left',
+                            alignItems: 'left',
+                            textAlign: 'left'
+                        }}
                 >
 
                     <IconButton
@@ -111,11 +112,16 @@ export default function BuyNow(props) {
                         aria-label="Continue"
                         color="inherit"
                         onClick={() => setBuyNowModal(false)}
+                       
                     >
-                        <Close className={classes.modalClose} />
+                        <Close className={classes.modalClose} />Exit
                     </IconButton>
 
-                    <h4 className={classes.modalTitle}>You will be reserving a Series 1 NFT. </h4>
+                    <h4 className={classes.modalTitle}  style={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            textAlign: 'center'
+                        }}>You will be reserving a Series 1 NFT. </h4>
 
 
                 </DialogTitle>
@@ -131,8 +137,13 @@ export default function BuyNow(props) {
                     <p>
                         Please have your ADA wallet ready.
                     </p>
-                    <p style={{color:"red"}}>
+                    <br></br>
+                    <p style={{ color: "red" }}>
                         Do not send ADA from exchanges!
+                    </p>
+                    <br></br>
+                    <p style={{ color: "red" }}>
+                        Make sure to send the exact amount of ADA requested otherwise you will be refunded minus the transaction fee.
                     </p>
 
                 </DialogContent>
@@ -144,7 +155,7 @@ export default function BuyNow(props) {
                             color="primary"
                             simple
                         >
-                            Continue
+                           <ArrowForward  className={classes.modalClose}/><b>Continue To Buy</b>
                         </Button>
                     </Link>
                 </DialogActions>
