@@ -87,10 +87,10 @@ export default function ProductSection() {
           <p className={classes.description}>5000 Planet NFT's in the series ranked in rarity 1-5000.</p>
           <p className={classes.description}>Each planet is made up of zero or more of the following elements we call "adornments".</p>
           <p className={classes.description}>Rarity score is calculated by adding up the rarity for each adornment for your planet.</p>
-          <p className={classes.description}>A full breakdown of rarity can be found </p>
+          {/* <p className={classes.description}>A full breakdown of rarity can be found </p>
           <Link to="/series1info" className={classes.dropdownLink}>
             <b>HERE</b>
-          </Link>,
+          </Link>, */}
 
         </GridItem>
       </GridContainer>

@@ -99,7 +99,7 @@ class NftLookUpPage extends React.Component {
       this.cancelSearch();
     } else {
       const filteredRows = this.state.data.filter((row) => {
-        return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+        return row.name.toLowerCase() == searchedVal.toLowerCase();
       });
       this.setState({ dataToShow: filteredRows });
     }

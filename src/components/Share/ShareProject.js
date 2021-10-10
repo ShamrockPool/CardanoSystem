@@ -49,7 +49,7 @@ export default class ShareProject extends React.Component {
         return (
             <div>
                 <FacebookShareButton url={baseUrl + this.props.name}
-                    title={"Checkout my Cardano System NFT"}>
+                    title={"Checkout This Cardano System NFT"}>
                     <FacebookIcon
                         size={"2.5rem"}
                         round
@@ -57,12 +57,12 @@ export default class ShareProject extends React.Component {
                 </FacebookShareButton>
 
                 <TwitterShareButton url={baseUrl + this.props.name}
-                    title={"Checkout my Cardano System NFT"}>
+                    title={"Checkout This Cardano System NFT"}>
                     <TwitterIcon size={"2.5rem"} round />
                 </TwitterShareButton>
 
                 <TelegramShareButton url={baseUrl + this.getUrl()}
-                    title={"Checkout my Cardano System NFT"}>
+                    title={"Checkout This Cardano System NFT"}>
                     <TelegramIcon size={"2.5rem"} round />
                 </TelegramShareButton>
             </div >
