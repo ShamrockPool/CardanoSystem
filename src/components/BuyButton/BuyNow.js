@@ -38,13 +38,17 @@ export default function BuyNow(props) {
 
 
     async function getData() {
-        const requestOptions = {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        };
-        var response = await fetch(baseUrl + countAvailable, requestOptions);
-        var data = await response.json();
-        setCount(data.count);
+        try {
+            const requestOptions = {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            };
+            var response = await fetch(baseUrl + countAvailable, requestOptions);
+            var data = await response.json();
+            setCount(data.count);
+        } catch (error) {
+            
+        }
     }
 
 
