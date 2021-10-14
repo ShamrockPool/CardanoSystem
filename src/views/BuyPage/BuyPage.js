@@ -34,7 +34,7 @@ const subtitle = {
 };
 
 const mobtitle = {
-  fontSize: "0.8rem",
+  fontSize: "0.6rem",
   display: "inline-block",
   position: "relative",
   marginTop: "30px",
@@ -43,8 +43,8 @@ const mobtitle = {
 };
 
 const mobsubtitle = {
-  fontSize: "0.7rem",
-  margin: "10px auto 0",
+  fontSize: "0.5rem",
+  margin: "5px auto 0",
   color: "white"
 };
 
@@ -111,7 +111,7 @@ export default class BuyPage extends React.Component {
 
       for (let i = 0; i < 24; i++) {
         console.log("In payment checker for.")
-        await this.sleep(80000);
+        await this.sleep(90000);
         await this.queryForSold();
         if (this.state.paymentReceived == true) {
           break;
@@ -178,10 +178,16 @@ export default class BuyPage extends React.Component {
           :
           <div>
             {this.state.loading &&
-              <video loop className='videoTag' autoPlay muted>
-                <source src={spacetravel} type='video/mp4' />
-              </video>
-
+              <div>
+                {width < 700 ?
+                  <video loop className='videoTag' autoPlay muted style={{ width: "300px", height: "300px", marginTop: "100px" }}>
+                    <source src={spacetravel} type='video/mp4' />
+                  </video>
+                  :
+                  <video loop className='videoTag' autoPlay muted>
+                    <source src={spacetravel} type='video/mp4' />
+                  </video>}
+              </div>
               // <img src={planet1} alt="First slide" className="slick-image" />
             }
 
@@ -211,7 +217,7 @@ export default class BuyPage extends React.Component {
                           <img src={walletqr} alt="First slide" className="slick-image" height="150vw" width="150vw" />
                           <br />
                           <br />
-                          <h2 style={mobsubtitle}>Your NFT is reserved for <Countdown date={Date.now() + 700000} renderer={renderer} />,</h2>
+                          <h2 style={mobsubtitle}>Your NFT is reserved for <Countdown date={Date.now() + 1200000} renderer={renderer} />,</h2>
                         </div>
                       </Row>
                       :

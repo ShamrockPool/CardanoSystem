@@ -1,6 +1,5 @@
 import React from 'react';
-
-// import "../../styles/components/Table.css";
+import { Col, Row } from 'reactstrap';
 import {
     FacebookShareButton,
     TelegramShareButton,
@@ -22,7 +21,10 @@ import {
     WhatsappIcon,
     EmailIcon
 } from "react-share";
-//import "react-tabs/style/react-tabs.css";
+
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClipboard } from '@fortawesome/free-solid-svg-icons';
 
 const baseUrl = "https://cardanosystem.com/#/search/";
 
@@ -45,9 +47,11 @@ export default class ShareProject extends React.Component {
         return inputUrl;
     }
 
+
+
     render() {
         return (
-            <div>
+            <Row>
                 <FacebookShareButton url={baseUrl + this.props.name}
                     title={"Checkout This Cardano System NFT"}>
                     <FacebookIcon
@@ -65,7 +69,18 @@ export default class ShareProject extends React.Component {
                     title={"Checkout This Cardano System NFT"}>
                     <TelegramIcon size={"2.5rem"} round />
                 </TelegramShareButton>
-            </div >
+
+
+                <p>
+                    Direct Link :
+                    <CopyToClipboard text={baseUrl + this.getUrl()} onCopy={() => this.setState({ copied: true })}>
+                        <FontAwesomeIcon size={"2x"} icon={faClipboard} />
+                    </CopyToClipboard>
+                </p>
+                {this.state.copied ? <span style={{ color: 'red' }}>Copied!</span> : null}
+
+
+            </Row >
         )
     };
 };

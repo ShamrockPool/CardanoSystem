@@ -94,13 +94,17 @@ export default function NftSection(props) {
                     }}
                 >
                     {props.nftData.ipfs != null &&  props.nftData.ipfs != "null" &&
-                        // <img src={props.nftData.ipfs} alt="First slide" className="slick-image" style={{ maxWidth: '35rem', maxHeight: '40rem', padding: '20px' }}/>}
+                        // <img src={props.nftData.ipfs} alt={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'}
+                        //  className="slick-image" style={{ height: 'auto' }}/>
+                         
 
                         <ModalImage
                             small={props.nftData.ipfs}
                             large={props.nftData.ipfs}
                             style={{ height: 'auto' }}
+                            alt={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'}
                         />}
+                        
                     <p>
                         Rarity information to be made available when series is sold out.
                     </p>
