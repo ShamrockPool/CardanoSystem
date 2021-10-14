@@ -91,14 +91,14 @@ export default function Series1Info(props) {
 
 
                             <CardBody>
-                                <Collapsible trigger="Contents">
+                                <Collapsible trigger="Contents" open="true">
                                     <p>
-                                        A planet is made up of Overlays, Spheres, Suns, Aliens and Moons.
+                                        Our planet NFTs consist of Overlays, Spheres, Suns, Aliens and Moons.
                                         <br></br>
-                                        Overlays take priority in calculating rarity.There are 11 overlays to choose from and only 1 earth.
+                                        There are 11 overlays to choose from with earth being the most rare.
                                         <br></br>
                                         <br></br>
-                                        Below is a list of all overlays and the number of times that overlay was used to create a planet.
+                                        Below is a list of all overlays and the number of times that overlay was used during the creation of a planet.
                                         <br></br>
                                         <br></br>
                                         Earth Overlay	1
@@ -130,9 +130,9 @@ export default function Series1Info(props) {
                             <CardBody>
                                 <Collapsible trigger="Creation">
                                     <p>
-                                        Each planet starts life as a blank sphere.There are 100 spheres to choose from.
+                                        Each planet starts life as a blank sphere. There are 100 spheres to choose from.
                                         <br></br>
-                                        Below is a list of all base spheres and the number of times that sphere was used to create a planet.
+                                        Below is a list of all base spheres and the number of times that sphere was used during the creation of a planet.
                                         <br></br>
                                         <br></br>
                                         Earth Sphere	1
@@ -342,9 +342,9 @@ export default function Series1Info(props) {
                             <CardBody>
                                 <Collapsible trigger="Suns">
                                     <p>
-                                        Each planet has 0 to 1 Cardano suns.There are 11 suns to choose from.
+                                        Each planet has 0 to 1 Cardano suns. There are 11 suns to choose from.
                                         <br></br>
-                                        Below is a list of all suns and the number of times that sun was used to create a planet.
+                                        Below is a list of all suns and the number of times that sun was used during the creation of a planet.
                                         <br></br>
                                         <br></br>
                                         Retae Sun	416
@@ -377,7 +377,7 @@ export default function Series1Info(props) {
                                     <p>
                                         Each planet has 0 to 1 aliens.There are 15 total aliens to choose from.
                                         <br></br>
-                                        Below is a list of all aliens and the number of times that alien was used to create a planet.
+                                        Below is a list of all aliens and the number of times that alien was used during the creation of a planet.
                                         <br></br>
                                         <br></br>
                                         Gogo Alien	284
@@ -416,24 +416,33 @@ export default function Series1Info(props) {
                                 <Collapsible trigger="Moons">
                                     <p>
                                     <br></br>
-                                        Each planet has 0 to 3 moons.There are 74 total moons to choose from.Moons can appear across multiple planets.They can also share names and there are also evil twins where the moon is identical to another moon but has a different name.
+                                        Each planet has 0 to 3 moons. 
+                                        and there are 74 total moons to choose from. 
+                                        <br/>
+                                        Moons can appear across multiple planets. 
+                                        <br/>
+                                        Moons can also share names and there are also "evil twins" where a moon is identical to another moon but 
+                                        has a different name.
                                         <br></br>
                                         Only the total number of moons that a planet has is used to calculate rarity with 3 moons being the most rare.
                                         <br></br>
-                                        In rare cases, a moon may be hidden behind another moon if they where drawn at the same x,y position.
+                                        In rare cases, a moon may be hidden behind another moon if they where drawn at the same x, y position.
                                         <br></br>
-                                        If your NFT lists more moons then you see orbiting the planet, then this is the case.
+                                        If your NFT lists more moons than you see orbiting the planet, then this is the case.
                                         <br></br>
-                                        Below is a list of moon counts and the total number of times they appear across all planets
+                                        Below is a list of moon counts and the total number of times they appear across all planets. 
                                         <br></br>
+                                        <br/>
+                                        
                                         3 Moons	513<br></br>
                                         2 Moons	1325<br></br>
                                         1 Moons	1499<br></br>
                                         0 Moons	1663<br></br>
 
                                         <br></br>
-                                        Below is a list of all moons and the number of times that moon was used to create a planet.
+                                        Below is a list of all moons and the number of times that moon was used during the creation of a planet.
                                         <br></br>
+                                        <br/>
                                         Daekugo Moon	1<br></br>
                                         Bishyle Moon	1<br></br>
                                         Pesoqe Moon	1<br></br>
