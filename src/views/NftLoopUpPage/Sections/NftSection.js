@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -36,12 +36,24 @@ export default function NftSection(props) {
         classes.imgFluid
     );
     const [classicModal, setClassicModal] = React.useState(false);
+    const [overlay, setOverlay] = React.useState("");
+
+    useEffect(async () => {
+
+        try {
+            setOverlay(props.nftData.traits.split(",")[1].replaceAll("\"", ""));
+        } catch (error) {
+            console.log(error);
+        }
+
+
+    });
 
     return (
         // <GridItem xs={12} sm={12} md={2} className={classes.itemGrid}>
         <div>
             <img src={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'} alt="..."
-                className={imageClasses} style={{ maxWidth: '20rem', maxHeight: '18rem', padding: '20px' }} onClick={() => setClassicModal(true)} />
+                className={imageClasses} style={{ maxWidth: '21rem', maxHeight: '20rem', padding: '0px' }} onClick={() => setClassicModal(true)} />
 
             <h4 className={classes.cardTitle} style={{ fontWeight: 'bold', color: 'white' }}>
                 {props.nftData.name}
@@ -104,12 +116,21 @@ export default function NftSection(props) {
                             style={{ height: 'auto' }}
                             alt={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'}
                         />} */}
-                        
+
                     <p>
-                        Rarity information to be made available when series is sold out.
+                        {overlay}
                     </p>
+                    {props.nftData.sold == 1 &&
+                        <div>
+                            <p>
+                                Rarity rating : {props.nftData.rarity} of 5000
+                            </p>
+                        </div>
+                    }
 
                 </DialogContent>
+
+                <br></br>
                 <DialogContent
                     id="classic-modal-slide-description"
                     className={classes.modalBody}

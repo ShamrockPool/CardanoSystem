@@ -1,6 +1,14 @@
 import React from "react";
-import { Col, Row } from 'reactstrap';
+import { Col, Row, Input } from 'reactstrap';
 import classNames from "classnames";
+
+// import {
+//   Button, Form, FormGroup, Input, Label,
+//   Modal,
+//   ModalBody,
+//   ModalFooter,
+//   ModalHeader,
+// } from 'reactstrap';
 
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -20,6 +28,9 @@ import { isEmpty } from 'utils/stringutil.js';
 
 import { css } from "@emotion/react";
 import ScaleLoader from "react-spinners/ScaleLoader";
+
+
+const defaultAmountToShow = 30;
 
 const override = css`
   display: block;
@@ -42,9 +53,13 @@ class NftLookUpPage extends React.Component {
     loaded: false,
     data: [],
     dataToShow: [],
-    count: 48,
+    count: defaultAmountToShow,
     start: 1,
-    search: ''
+    search: '',
+    overlayFilter: '',
+    usingFilter: false,
+    usingSearch: false,
+    filteredData: []
   };
 
   async componentDidMount() {
@@ -64,28 +79,31 @@ class NftLookUpPage extends React.Component {
     }
 
     try {
-      if(this.props.location.state.planetName){
+      if (this.props.location.state.planetName) {
         this.requestSearch(this.props.location.state.planetName)
       }
     } catch (error) {
-      
+
     }
 
     try {
-      if(this.props.match.params.planetname){
+      if (this.props.match.params.planetname) {
         this.requestSearch(this.props.match.params.planetname)
       }
     } catch (error) {
-      
+
     }
-
-
-
   };
 
   fetchDataForTable = () => {
     this.setState({ count: this.state.count + this.state.count });
-    var response = this.state.data.slice(0, this.state.count);
+    var response = null;
+    if (this.state.usingFilter) {
+      response = this.state.filteredData.slice(0, this.state.count);
+    } else {
+      response = this.state.data.slice(0, this.state.count);
+    }
+
 
     setTimeout(() => {
       this.setState({ dataToShow: response });
@@ -94,6 +112,7 @@ class NftLookUpPage extends React.Component {
   };
 
   requestSearch(searchedVal) {
+    this.setState({ usingSearch: true });
     this.setState({ search: searchedVal });
     if (isEmpty(searchedVal)) {
       this.cancelSearch();
@@ -106,54 +125,94 @@ class NftLookUpPage extends React.Component {
   };
 
   cancelSearch = () => {
+    window.scrollTo(0, 0);
+    this.setState({ overlayFilter: "" });
+    this.setState({ usingFilter: false });
+    this.setState({ usingSearch: false });
     this.setState({ search: null });
-    this.setState({ dataToShow: this.state.data.slice(0, 48) });
+    this.setState({ count: defaultAmountToShow });
+    this.setState({ dataToShow: this.state.data.slice(0, defaultAmountToShow) });
   };
 
+  cancelSearchNoSlice = () => {
+    window.scrollTo(0, 0);
+    this.setState({ overlayFilter: "" });
+    this.setState({ usingFilter: false });
+    this.setState({ usingSearch: false });
+    this.setState({ search: null });
+  };
+
+
+  overlayFilter(type) {
+    this.cancelSearchNoSlice();
+    this.setState({ loaded: false });
+    this.state.loaded = false;
+
+
+    this.handleOverLayFilter(type);
+  };
+
+  async handleOverLayFilter(type) {
+
+    this.setState({ overlayFilter: type });
+    this.setState({ usingFilter: true });
+    this.setState({ count: defaultAmountToShow });
+
+    if (!isEmpty(type)) {
+      const filteredRows = this.state.data.filter((row) => {
+        return row.traits != null && row.traits.includes(type);
+      });
+      this.setState({ filteredData: filteredRows });
+      this.setState({ dataToShow: filteredRows.slice(0, defaultAmountToShow) });
+      this.setState({ loaded: true });
+      this.state.loaded = true;
+    }
+
+  }
 
   render() {
 
     return (
 
       <Parallax filter image={require("assets/img/landing-bg5.jpg").default} style={{
-        zIndex: "0", justifyContent: 'center',
+        zIndex: "0", justifyContent: "center",
         alignItems: 'center',
         textAlign: 'center'
       }}>
+
         <Col style={{
-          zIndex: "12"
+          zIndex: "10",
+          marginTop: "250px"
         }}>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-
-          <Row style={{
-            zIndex: "12", justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-          }}>
-            <div style={{
-              zIndex: "12", justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'center',
-            }}>
-
-              <h1 style={{ color: "#FFFFFF" }}>Nft Search</h1>
-
-              <SearchBar style={{
-                margin: "0 auto",
-                maxWidth: 600
-              }}
-                value={this.state.search}
-                onChange={(searchVal) => this.requestSearch(searchVal)}
-                onCancelSearch={() => this.cancelSearch()}
-              />
-
+          <h1 style={{ color: "#FFFFFF" }}>Nft Search</h1>
+          <SearchBar style={{
+            margin: "0 auto",
+            maxWidth: 600
+          }}
+            value={this.state.search}
+            onChange={(searchVal) => this.requestSearch(searchVal)}
+            onCancelSearch={() => this.cancelSearch()}
+          />
+          
+          <Row>
+            <div>
+              <br></br>
+              <p style={{ color: "#FFFFFF" }}>Overlay Type</p>
+              <Input type="select" name="select" onChange={e => this.overlayFilter(e.target.value)}
+                value={this.state.overlayFilter}>
+                <option></option>
+                <option>Dead</option>
+                <option>Melting</option>
+                <option>Static</option>
+                <option>Cross</option>
+                <option>Slash</option>
+                <option>Wavy</option>
+                <option>Haze</option>
+                <option>Flare</option>
+                <option>Marble</option>
+                <option>Earth</option>
+                <option>Base</option>
+              </Input>
             </div>
           </Row>
           <br></br>
@@ -161,8 +220,10 @@ class NftLookUpPage extends React.Component {
           <Row>
             {this.state.loaded == true &&
               <div id="scrollableDiv" style={{
-                height: "90vh", overflow: "auto", zIndex: "12",
-                color: "#FFFFFF", padding: '40px'
+                zIndex: "10",
+                height: "60vh", overflow: "auto",
+                color: "#FFFFFF",
+                marginBottom: '200px'
               }}>
                 <InfiniteScroll
                   dataLength={this.state.dataToShow.length} //This is important field to render the next data //https://codesandbox.io/s/0s3wk
