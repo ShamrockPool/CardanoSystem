@@ -10,6 +10,8 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
 
+import BuyNow from "components/BuyButton/BuyNow";
+
 // @material-ui/icons
 
 // core components
@@ -43,9 +45,8 @@ export default function LeftHeaderLinks(props) {
           classes={{ tooltip: classes.tooltip }}
         >
           <Link to="/search" className={classes.navLink}>
-            <Button style={{ fontWeight: 'bold', color: "#9c27b0", fontFamily:"Goldman"}}><i className={classes.socialIcons + " fas fa-search"} />NFT Search</Button>
+            <Button style={{ fontWeight: 'bold', color: "#9c27b0", fontFamily: "Goldman" }}><i className={classes.socialIcons + " fas fa-search"} />NFT Search</Button>
           </Link>
-
         </Tooltip>
       </ListItem>
     </List>

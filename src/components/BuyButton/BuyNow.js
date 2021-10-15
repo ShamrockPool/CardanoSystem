@@ -47,44 +47,32 @@ export default function BuyNow(props) {
             var data = await response.json();
             setCount(data.count);
         } catch (error) {
-            
+
         }
     }
 
 
     return (
-        <div style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-        }}>
+        <div>
             {count > 0 ?
-                <GridItem xs={12} sm={12} md={6} lg={12} style={{
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                }}>
 
-                    <Button
-                        color="primary"
-                        size={props.buttonSize}
-                        onClick={() => setBuyNowModal(true)}>
 
-                        BUY NOW
-                    </Button>
-                </GridItem> :
-                <GridItem xs={12} sm={12} md={6} lg={12} style={{
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                }}>
+                <Button
+                    color="primary"
+                    size={props.buttonSize}
+                    onClick={() => setBuyNowModal(true)}>
 
-                    <Button
-                        color="primary"
-                        size="xlg">
-                        SOLD OUT
-                    </Button>
-                </GridItem>}
+                    BUY NOW
+                </Button>
+                :
+
+
+                <Button
+                    color="primary"
+                    size="xlg">
+                    SOLD OUT
+                </Button>
+            }
 
             <Dialog
                 classes={{
@@ -103,11 +91,11 @@ export default function BuyNow(props) {
                     id="classic-modal-slide-title"
                     disableTypography
                     className={classes.modalHeader}
-                  style={{
-                            justifyContent: 'left',
-                            alignItems: 'left',
-                            textAlign: 'left'
-                        }}
+                    style={{
+                        justifyContent: 'left',
+                        alignItems: 'left',
+                        textAlign: 'left'
+                    }}
                 >
 
                     <IconButton
@@ -116,16 +104,16 @@ export default function BuyNow(props) {
                         aria-label="Continue"
                         color="inherit"
                         onClick={() => setBuyNowModal(false)}
-                       
+
                     >
                         <Close className={classes.modalClose} />Exit
                     </IconButton>
 
-                    <h4 className={classes.modalTitle}  style={{
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            textAlign: 'center'
-                        }}>You will be reserving a Series 1 NFT. </h4>
+                    <h4 className={classes.modalTitle} style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }}>You will be reserving a Series 1 NFT. </h4>
 
 
                 </DialogTitle>
@@ -159,7 +147,7 @@ export default function BuyNow(props) {
                             color="primary"
                             simple
                         >
-                           <ArrowForward  className={classes.modalClose}/><b>Continue To Buy</b>
+                            <ArrowForward className={classes.modalClose} /><b>Continue To Buy</b>
                         </Button>
                     </Link>
                 </DialogActions>
