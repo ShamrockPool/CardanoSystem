@@ -8,6 +8,8 @@ import walletqr from "assets/img/walletqr.jpg";
 import Countdown from 'react-countdown';
 
 import spacetravel from 'assets/img/spacetravel2.mp4';
+import spacetravel3 from 'assets/img/spacetravel3.mp4';
+import spacetravel4 from 'assets/img/spacetravel4.mp4';
 
 const container = {
   position: "relative",
@@ -65,26 +67,43 @@ export default class BuyPage extends React.Component {
     paymentReceived: false,
     nftReserved: null,
     planetName: null,
-    refreshedScreen: false
+    refreshedScreen: false,
+    loadingVideo: spacetravel
   };
 
   async componentDidMount() {
     window.scrollTo(0, 0);
 
+    var random = this.randomInteger(0, 2);
 
-    try {
-      if (this.props.location.state.usedBuyButton) {
-        this.setState({ refreshedScreen: false });
-      }
-    } catch (error) {
-      this.setState({ refreshedScreen: true });
+    if (random == 0) {
+      this.setState({ loadingVideo: spacetravel });
+    } else if (random == 1) {
+      this.setState({ loadingVideo: spacetravel3 });
     }
+    else{
+      this.setState({ loadingVideo: spacetravel4 });
+    }
+
+
+      try {
+        if (this.props.location.state.usedBuyButton) {
+          this.setState({ refreshedScreen: false });
+        }
+      } catch (error) {
+        this.setState({ refreshedScreen: true });
+      }
 
     clearTimeout(this.inputTimer);
     this.inputTimer = setTimeout((e) => {
       this.reserveRandom();
       this.setState({ loading: false });
     }, 7000);
+  }
+
+
+  randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   async reserveRandom() {
@@ -179,16 +198,19 @@ export default class BuyPage extends React.Component {
           <div>
             {this.state.loading &&
               <div>
-                {width < 700 ?
-                  <video loop className='videoTag' autoPlay muted style={{ width: "300px", height: "300px", marginTop: "100px" }}>
-                    <source src={spacetravel} type='video/mp4' />
-                  </video>
-                  :
-                  <video loop className='videoTag' autoPlay muted>
-                    <source src={spacetravel} type='video/mp4' />
-                  </video>}
+
+                <div>
+                  {width < 700 ?
+                    <video loop className='videoTag' autoPlay muted style={{ width: "300px", height: "300px", marginTop: "100px" }}>
+                      <source src={this.state.loadingVideo} type='video/mp4' />
+                    </video>
+                    :
+                    <video loop className='videoTag' autoPlay muted>
+                      <source src={this.state.loadingVideo} type='video/mp4' />
+                    </video>}
+                </div>
+
               </div>
-              // <img src={planet1} alt="First slide" className="slick-image" />
             }
 
             {this.state.loading == false &&
