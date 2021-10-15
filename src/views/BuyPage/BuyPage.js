@@ -10,6 +10,7 @@ import Countdown from 'react-countdown';
 import spacetravel from 'assets/img/spacetravel2.mp4';
 import spacetravel3 from 'assets/img/spacetravel3.mp4';
 import spacetravel4 from 'assets/img/spacetravel4.mp4';
+import spacetravel5 from 'assets/img/spacetravel5.mp4';
 
 const container = {
   position: "relative",
@@ -74,15 +75,17 @@ export default class BuyPage extends React.Component {
   async componentDidMount() {
     window.scrollTo(0, 0);
 
-    var random = this.randomInteger(0, 2);
+    var random = this.randomInteger(0, 4);
 
     if (random == 0) {
       this.setState({ loadingVideo: spacetravel });
     } else if (random == 1) {
       this.setState({ loadingVideo: spacetravel3 });
     }
-    else{
+    else if (random == 2) {
       this.setState({ loadingVideo: spacetravel4 });
+    } else {
+      this.setState({ loadingVideo: spacetravel5 });
     }
 
 
