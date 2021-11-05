@@ -22,6 +22,11 @@ import Button from "components/CustomButtons/Button.js";
 import ShareProject from 'components/Share/ShareProject';
 import ModalImage from "react-modal-image";
 
+const width = window.innerWidth;
+
+const mobileNftStyle = { maxWidth: '22rem', maxHeight: '22rem', padding: '0px' };
+const standardNftStyle = { maxWidth: '60rem', maxHeight: '60rem', padding: '10px' };
+
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -35,10 +40,15 @@ export default function NftSection(props) {
         classes.imgRoundedCircle,
         classes.imgFluid
     );
+    const [nftStyle, setNftStyle] = React.useState(mobileNftStyle);
     const [classicModal, setClassicModal] = React.useState(false);
     const [overlay, setOverlay] = React.useState("");
 
     useEffect(async () => {
+
+        if(width > 700){
+            setNftStyle(standardNftStyle);
+        }
 
         try {
             setOverlay(props.nftData.traits.split(",")[1].replaceAll("\"", ""));
@@ -53,7 +63,7 @@ export default function NftSection(props) {
         // <GridItem xs={12} sm={12} md={2} className={classes.itemGrid}>
         <div>
             <img src={'https://shamrockpool.github.io/CardanoSystemThumbs/thumbnails/' + props.nftData.id + '.png'} alt="..."
-                className={imageClasses} style={{ maxWidth: '21rem', maxHeight: '20rem', padding: '0px' }} onClick={() => setClassicModal(true)} />
+                className={imageClasses} style={nftStyle} onClick={() => setClassicModal(true)} />
 
             <h4 className={classes.cardTitle} style={{ fontWeight: 'bold', color: 'white' }}>
                 {props.nftData.name}
