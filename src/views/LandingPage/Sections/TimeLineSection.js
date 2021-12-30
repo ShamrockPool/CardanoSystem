@@ -98,12 +98,45 @@ export default function TimeLineSection() {
               iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
               icon={<Moon />}
             >
-              <h3 className="vertical-timeline-element-title">Series 1 Public Sale</h3>
+              <h3 className="vertical-timeline-element-title">Series 1 Pre Sale</h3>
               <h4 className="vertical-timeline-element-subtitle">October 15th 2021</h4>
+              <p>
+                Cardano System Series 1 planets will be available for pre sale purchasing.
+              </p>
+            </VerticalTimelineElement>
+
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              date="2008 - 2010"
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
+              icon={<Moon />}
+            >
+              <h3 className="vertical-timeline-element-title">Series 1 Live Sale</h3>
+              <h4 className="vertical-timeline-element-subtitle">??</h4>
               <p>
                 Cardano System Series 1 planets will be available for public purchasing.
               </p>
             </VerticalTimelineElement>
+
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              date="2008 - 2010"
+              contentStyle={{ background: 'rgb(156, 39, 176)', color: '#fff' }}
+              contentArrowStyle={{ borderRight: '7px solid rgb(156, 39, 176)' }}
+              // date="2010 - 2011"
+              iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
+              icon={<Moon />}
+            >
+              <h3 className="vertical-timeline-element-title">Series 2 Game</h3>
+              <h4 className="vertical-timeline-element-subtitle">??</h4>
+              <p>
+                We have created an onchain game and will be finalising and releasing info on it soon.
+              </p>
+            </VerticalTimelineElement>
+
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"

@@ -119,62 +119,17 @@ export default class BuyPage extends React.Component {
     if (data != null && data.price != null) {
       this.setState({ price: data.price });
       this.setState({ nftReserved: true });
-      this.paymentCheck();
+
     } else {
       this.setState({ nftReserved: false });
     }
 
   }
 
-  async paymentCheck() {
-    if (this.state.nftReserved) {
-      console.log("In payment checker1.")
-
-      for (let i = 0; i < 24; i++) {
-        console.log("In payment checker for.")
-        await this.sleep(90000);
-        await this.queryForSold();
-        if (this.state.paymentReceived == true) {
-          break;
-        }
-      }
-
-      if (this.state.paymentReceived == true) {
-        this.props.history.push({
-          pathname: "/search",
-          state: { planetName: this.state.planetName }
-        })
-      }
-    }
-  }
-
   async sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  async queryForSold() {
-    try {
-      console.log("In payment checker2.")
-
-      const requestOptions = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      };
-      console.log(this.state.price)
-      var response = await fetch(baseUrl + getSoldInfo + this.state.price, requestOptions);
-      if (response != null) {
-        var data = await response.json();
-        console.log(data);
-
-        if (data != null && data.id != null) {
-          this.setState({ paymentReceived: true });
-          this.setState({ planetName: data.name });
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   render() {
     return (

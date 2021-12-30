@@ -79,7 +79,7 @@ export default function TeamSection() {
               <img src={cardanobudz} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                CardanoBudz
+               CardanoSpin
                 <br />
                 {/* <small className={classes.smallTitle}>Designer</small> */}
               </h4>
@@ -94,7 +94,7 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   target="_blank"
-                  href="https://twitter.com/CardanoBudz"
+                  href="https://twitter.com/CardanoSpin"
                 >
                   <i className={classes.socials + " fab fa-twitter"} />
                 </Button>
