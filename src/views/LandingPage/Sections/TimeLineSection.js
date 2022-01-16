@@ -99,7 +99,7 @@ export default function TimeLineSection() {
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Series 1 Pre Sale</h3>
-              <h4 className="vertical-timeline-element-subtitle">October 15th 2021</h4>
+              <h4 className="vertical-timeline-element-subtitle">COMPLETE</h4>
               <p>
                 Cardano System Series 1 planets will be available for pre sale purchasing.
               </p>
@@ -115,7 +115,7 @@ export default function TimeLineSection() {
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Series 1 Live Sale</h3>
-              <h4 className="vertical-timeline-element-subtitle">??</h4>
+              <h4 className="vertical-timeline-element-subtitle">Live Sale NOW ON</h4>
               <p>
                 Cardano System Series 1 planets will be available for public purchasing.
               </p>
@@ -131,7 +131,7 @@ export default function TimeLineSection() {
               icon={<Moon />}
             >
               <h3 className="vertical-timeline-element-title">Series 2 Game</h3>
-              <h4 className="vertical-timeline-element-subtitle">??</h4>
+              <h4 className="vertical-timeline-element-subtitle">1st Feb</h4>
               <p>
                 We have created an onchain game and will be finalising and releasing info on it soon.
               </p>
@@ -146,7 +146,7 @@ export default function TimeLineSection() {
               iconStyle={{ background: 'rgb(60, 72, 88)', color: '#fff'}}
               icon={<Moon />}
             >
-              <h3 className="vertical-timeline-element-title">Updates coming soon!</h3>
+              <h3 className="vertical-timeline-element-title">Alien NFT Updates coming soon!</h3>
             </VerticalTimelineElement>
 
           </VerticalTimeline>
